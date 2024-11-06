@@ -8,15 +8,19 @@ all: help
 $(VENV_DIR):
 	python3 -m venv $(VENV_DIR)
 
+run:
+	python3 main.py
+
 install: $(VENV_DIR)
+	mkdir logs
 	$(PIP) install -r requirements.txt
 
 test: $(VENV_DIR)
 	$(PYTHON) -m unittest discover -s tests
 
 lint: $(VENV_DIR)
-	$(PIP) install flake8
-	$(VENV_DIR)/bin/flake8 src tests
+	$(PIP) install ruff
+	$(VENV_DIR)/bin/ruff check src
 
 clean:
 	rm -rf $(VENV_DIR)
@@ -26,6 +30,7 @@ clean:
 help:
 	@echo "Usage:"
 	@echo "  make install   - Set up the virtual environment and install dependencies"
+	@echo "  make run       - Start the Card Bot in the foreground"
 	@echo "  make test      - Run tests"
 	@echo "  make lint      - Lint the code"
 	@echo "  make clean     - Clean up generated files"
