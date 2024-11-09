@@ -70,9 +70,7 @@ def _replace_description_icons(frame: DataFrame) -> str:
     description = frame["Description"].array[0]
 
     for uwdb_icon, custom_icon in icon_map.items():
-        description = description.replace(uwdb_icon, custom_icon.value).replace(
-            "\\n", "\n"
-        )
+        description = description.replace(uwdb_icon, custom_icon).replace("\\n", "\n")
 
     return description
 
