@@ -42,11 +42,12 @@ def generate_multi_embed(card_frame: DataFrame, warband_frame: DataFrame) -> Emb
 
 def generate_warband_embed(frame: DataFrame) -> Embed:
     if 1 == len(frame):
+        warband_name = frame["Warband"].array[0]
         return (
             Embed(title=frame["Name"].array[0])
             .set_image(url=_warband_image_link(frame))
             .set_thumbnail(url=_warband_image_link(frame, inspired=True))
-            .set_footer(text=f"Warband: {frame["Warband"].array[0]}")
+            .set_footer(text=f"Warband: {warband_name}")
         )
 
     warscroll = frame[1 == frame["IsWarscroll"]]
@@ -71,15 +72,18 @@ def _build_single_description(frame: DataFrame) -> str:
 
 
 def _build_icons(frame: DataFrame) -> str:
-    match frame["Type"].array[0]:
-        case "Objective":
-            return _build_objective_icons(frame)
-        case "Ploy":
-            return _build_ploy_icons(frame)
-        case "Upgrade":
-            return _build_upgrade_icons(frame)
-        case _:
-            return ":question:"
+    type_value = frame["Type"].array[0]
+
+    if type_value == "Objective":
+        return _build_objective_icons(frame)
+
+    if type_value == "Ploy":
+        return _build_ploy_icons(frame)
+
+    if type_value == "Upgrade":
+        return _build_upgrade_icons(frame)
+
+    return ":question:"
 
 
 def _build_objective_icons(frame: DataFrame) -> str:
