@@ -16,14 +16,50 @@ def generate_single_embed(frame: DataFrame) -> Embed:
     return embed
 
 
-def generate_multi_embed(frame: DataFrame) -> Embed:
+def generate_multi_embed(card_frame: DataFrame, warband_frame: DataFrame) -> Embed:
     embed = Embed()
-    names = frame["Name"].tolist()
+    card_names = card_frame["Name"].tolist()
+    warband_names = warband_frame["Name"].tolist()
 
-    for i in range(0, min(len(names), 24), 5):
+    for i in range(0, min(len(card_names), 24), 5):
         embed.add_field(
             name="Cards",
-            value="\n".join(names[i : i + 5]),
+            value="\n".join(card_names[i : i + 5]),
+            inline=True,
+        )
+
+    fields_left = 25 - len(embed.fields)
+
+    for i in range(0, min(len(warband_names), fields_left), 5):
+        embed.add_field(
+            name="Warbands",
+            value="\n".join(warband_names[i : i + 5]),
+            inline=True,
+        )
+
+    return embed
+
+
+def generate_warband_embed(frame: DataFrame) -> Embed:
+    if 1 == len(frame):
+        return (
+            Embed(title=frame["Name"].array[0])
+            .set_image(url=_warband_image_link(frame))
+            .set_thumbnail(url=_warband_image_link(frame, inspired=True))
+            .set_footer(text=f"Warband: {frame["Warband"].array[0]}")
+        )
+
+    warscroll = frame[1 == frame["IsWarscroll"]]
+    fighter_names = frame[0 == frame["IsWarscroll"]]["Name"].tolist()
+
+    embed = Embed(
+        title=warscroll["Name"].array[0],
+    ).set_image(url=_warband_image_link(warscroll))
+
+    for i in range(0, len(fighter_names), 5):
+        embed.add_field(
+            name="Fighters",
+            value="\n".join(fighter_names[i : i + 5]),
             inline=True,
         )
 
@@ -76,16 +112,23 @@ def _replace_description_icons(frame: DataFrame) -> str:
 
 
 def _thumbnail_link(frame: DataFrame) -> str:
-    card = frame.head(1)
-    set_name = card["Set"].array[0].lower().replace(" ", "-")
+    set_name = frame["Set"].array[0].lower().replace(" ", "-")
 
     deck_name = (
-        card["Deck"].array[0].lower().replace(" rivals deck", "").replace(" ", "%20")
+        frame["Deck"].array[0].lower().replace(" rivals deck", "").replace(" ", "%20")
     )
-    card_name = card["Name"].array[0].replace(" ", "-")
+    card_name = frame["Name"].array[0].replace(" ", "-")
     file_name = f"{card_name}.png"
 
     return f"https://www.underworldsdb.com/cards/{set_name}/{deck_name}/{file_name}"
+
+
+def _warband_image_link(frame: DataFrame, inspired: bool = False) -> str:
+    warband_name = frame["Warband"].array[0].replace(" ", "-").lower()
+    image_number = frame["ImageNumber"].array[0]
+    file_name = f"{warband_name}-{image_number}{'-inspired' if inspired else ''}.png"
+
+    return f"https://www.underworldsdb.com/cards/fighters/{file_name}"
 
 
 def _build_footer(frame: DataFrame) -> str:
