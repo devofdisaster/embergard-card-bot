@@ -35,7 +35,7 @@ class EmbergardClient(Client):
             return
 
         return super().run(
-            os.getenv("CLIENT_TOKEN"),
+            token,
             log_handler=self._log_handler,
             log_level=logging.DEBUG,
         )
