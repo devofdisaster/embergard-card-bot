@@ -5,6 +5,7 @@ import os
 from discord import Client, Intents, Message
 from src.card_library import Library
 from src.discord.message_factory import (
+    generate_fighter_embeds,
     generate_multi_embed,
     generate_single_embed,
     generate_warband_embed,
@@ -79,7 +80,7 @@ class EmbergardClient(Client):
                     )
 
                 return await message.channel.send(
-                    embed=generate_warband_embed(warband_matches),
+                    embeds=generate_fighter_embeds(warband_matches),
                 )
 
             if 0 == warband_count and 1 == card_count:
