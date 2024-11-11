@@ -1,6 +1,7 @@
 import logging
 import logging.handlers
 import os
+import re
 
 from discord import Client, Intents, Message
 from src.card_library import Library
@@ -53,44 +54,46 @@ class EmbergardClient(Client):
         if message.author == self.user:
             return
 
-        if message.content.startswith("((") and message.content.endswith("))"):
-            content = message.content.lstrip("( \t").rstrip(" )\t")
+        match = re.search(r"\(\(\s?(.*?)\s?\)\)", message.content)
 
-            if len(content) < 3:
+        if not match:
+            return
+
+        content = match.group(1).strip()
+
+        if 0 == len(content):
+            return
+
+        if len(content) < 3:
+            return await message.channel.send(
+                "Search term too short, must be at least Tok-long"
+            )
+
+        warband_matches = self._library.search_warbands(content)
+        card_matches = self._library.search_cards(content)
+        warband_count = len(warband_matches)
+        card_count = len(card_matches)
+
+        if 1 == warband_count and 0 == card_count:
+            if 1 == int(warband_matches["IsWarscroll"].array[0]):
                 return await message.channel.send(
-                    "Search term too short, must be at least Tok-long"
-                )
-
-            if 0 == len(content):
-                return
-
-            warband_matches = self._library.search_warbands(content)
-            card_matches = self._library.search_cards(content)
-            warband_count = len(warband_matches)
-            card_count = len(card_matches)
-
-            if 1 == warband_count and 0 == card_count:
-                if 1 == int(warband_matches["IsWarscroll"].array[0]):
-                    return await message.channel.send(
-                        embed=generate_warband_embed(
-                            self._library.get_whole_warband(
-                                warband_matches["Warband"].array[0]
-                            )
+                    embed=generate_warband_embed(
+                        self._library.get_whole_warband(
+                            warband_matches["Warband"].array[0]
                         )
                     )
-
-                return await message.channel.send(
-                    embeds=generate_fighter_embeds(warband_matches),
                 )
 
-            if 0 == warband_count and 1 == card_count:
-                return await message.channel.send(
-                    embed=generate_single_embed(card_matches)
-                )
-
-            if 0 == warband_count and 0 == card_count:
-                return await message.channel.send("No matches found")
-
-            await message.channel.send(
-                embed=generate_multi_embed(card_matches, warband_matches)
+            return await message.channel.send(
+                embeds=generate_fighter_embeds(warband_matches),
             )
+
+        if 0 == warband_count and 1 == card_count:
+            return await message.channel.send(embed=generate_single_embed(card_matches))
+
+        if 0 == warband_count and 0 == card_count:
+            return await message.channel.send("No matches found")
+
+        await message.channel.send(
+            embed=generate_multi_embed(card_matches, warband_matches)
+        )
