@@ -1,3 +1,5 @@
+from ast import List
+
 from pandas import DataFrame
 
 from discord import Embed
@@ -41,15 +43,6 @@ def generate_multi_embed(card_frame: DataFrame, warband_frame: DataFrame) -> Emb
 
 
 def generate_warband_embed(frame: DataFrame) -> Embed:
-    if 1 == len(frame):
-        warband_name = frame["Warband"].array[0]
-        return (
-            Embed(title=frame["Name"].array[0])
-            .set_image(url=_warband_image_link(frame))
-            .set_thumbnail(url=_warband_image_link(frame, inspired=True))
-            .set_footer(text=f"Warband: {warband_name}")
-        )
-
     warscroll = frame[1 == frame["IsWarscroll"]]
     fighter_names = frame[0 == frame["IsWarscroll"]]["Name"].tolist()
 
@@ -65,6 +58,17 @@ def generate_warband_embed(frame: DataFrame) -> Embed:
         )
 
     return embed
+
+
+def generate_fighter_embeds(frame: DataFrame) -> List:
+    warband_name = frame["Warband"].array[0]
+
+    return [
+        Embed(title=frame["Name"].array[0]).set_image(url=_warband_image_link(frame)),
+        Embed()
+        .set_image(url=_warband_image_link(frame, inspired=True))
+        .set_footer(text=f"Warband: {warband_name}"),
+    ]
 
 
 def _build_single_description(frame: DataFrame) -> str:
