@@ -1,34 +1,34 @@
 Warband,Name,ImageNumber,IsWarscroll
-The Sepulchral Guard,The Sepulchral Guard,0,1
-The Sepulchral Guard,The Sepulchral Warden,1,0
-The Sepulchral Guard,The Harvester,2,0
-The Sepulchral Guard,The Prince of Dust,3,0
-The Sepulchral Guard,The Champion,4,0
-The Sepulchral Guard,The Inevitable Petitioner,5,0
-The Sepulchral Guard,The Zealous Petitioner,6,0
-The Sepulchral Guard,The Rising Petitioner,7,0
+Sepulchral Guard,The Sepulchral Guard,0,1
+Sepulchral Guard,The Sepulchral Warden,1,0
+Sepulchral Guard,The Prince of Dust,2,0
+Sepulchral Guard,The Champion,3,0
+Sepulchral Guard,The Harvester,4,0
+Sepulchral Guard,The Inevitable Petitioner,5,0
+Sepulchral Guard,The Zealous Petitioner,6,0
+Sepulchral Guard,The Rising Petitioner,7,0
 The Farstriders,The Farstriders,0,1
 The Farstriders,Sanson Farstrider,1,0
 The Farstriders,Almeric Eagle-Eye,2,0
 The Farstriders,Elias Swiftblade,3,0
 Ironsoul's Condemnors,Ironsoul's Condemnors,0,1
 Ironsoul's Condemnors,Gwynne Ironsoul,1,0
-Ironsoul's Condemnors,Brodus Blightbane,2,0
-Ironsoul's Condemnors,Tavian of Sarnassus,3,0
+Ironsoul's Condemnors,Tavian of Sarnassus,2,0
+Ironsoul's Condemnors,Brodus Blightbane,3,0
 The Thricefold Discord,The Thricefold Discord,0,1
 The Thricefold Discord,Vexmor the Excessively Indolent,1,0
 The Thricefold Discord,"Lascivyr, the Bladed Blessing",2,0
 The Thricefold Discord,Vashtiss the Coiled,3,0
 Cyreni's Razors,Cyreni's Razors,0,1
 Cyreni's Razors,Cyreni of the Abyss,1,0
-Cyreni's Razors,Cephanyr,2,0
+Cyreni's Razors,Alathyrr,2,0
 Cyreni's Razors,Renglaith,3,0
-Cyreni's Razors,Alathyrr,4,0
+Cyreni's Razors,Cephanyr,4,0
 Daggok's Stab-ladz,Daggok's Stab-ladz,0,1
-Daggok's Stab-ladz,Jagz da Bleeda,1,0
+Daggok's Stab-ladz,Daggok Finksteala,1,0
 Daggok's Stab-ladz,Grakk da Hook,2,0
 Daggok's Stab-ladz,Hurk da Howla,3,0
-Daggok's Stab-ladz,Daggok Finksteala,4,0
+Daggok's Stab-ladz,Jagz da Bleeda,4,0
 Zondara's Gravebreakers,Zondara's Gravebreakers,0,1
 Zondara's Gravebreakers,Zondara Rivenheart,1,0
 Zondara's Gravebreakers,Lost Ferlain,2,0
@@ -36,46 +36,46 @@ Zondara's Gravebreakers,Cracktomb,3,0
 Zondara's Gravebreakers,Toyl,4,0
 Zondara's Gravebreakers,Pikk,5,0
 Thorns of the Briar Queen,Thorns of the Briar Queen,0,1
-Thorns of the Briar Queen,The Ironwretch,1,0
-Thorns of the Briar Queen,Briar Queen,2,0
-Thorns of the Briar Queen,The Silenced,3,0
-Thorns of the Briar Queen,Varclav the Cruel,4,0
-Thorns of the Briar Queen,The Exhumed,5,0
-Thorns of the Briar Queen,The Ever-hanged,6,0
-Thorns of the Briar Queen,The Uncrowned,7,0
+Thorns of the Briar Queen,Briar Queen,1,0
+Thorns of the Briar Queen,Varclav the Cruel,2,0
+Thorns of the Briar Queen,The Ever-hanged,3,0
+Thorns of the Briar Queen,The Uncrowned,4,0
+Thorns of the Briar Queen,The Silenced,5,0
+Thorns of the Briar Queen,The Exhumed,6,0
+Thorns of the Briar Queen,The Ironwretch,7,0
 Zarbag'z Gitz,Zarbag'z Gitz,0,1
 Zarbag'z Gitz,Zarbag,1,0
 Zarbag'z Gitz,Drizgit da Squig Herder,2,0
-Zarbag'z Gitz,Snirk Sourtongue,3,0
-Zarbag'z Gitz,Prog da Netter,4,0
-Zarbag'z Gitz,Bonekrakka,5,0
-Zarbag'z Gitz,Gobbaluk,6,0
+Zarbag'z Gitz,Prog da Netter,3,0
+Zarbag'z Gitz,Bonekrakka,4,0
+Zarbag'z Gitz,Gobbaluk,5,0
+Zarbag'z Gitz,Snirk Sourtongue,6,0
 Zarbag'z Gitz,Redkap,7,0
 Zarbag'z Gitz,Stikkit,8,0
 Zarbag'z Gitz,Dibbz,9,0
 Mollog's Mob,Mollog's Mob,0,1
 Mollog's Mob,Mollog the Mighty,1,0
-Mollog's Mob,Stalagsquig,2,0
-Mollog's Mob,Batsquig,3,0
+Mollog's Mob,Bat Squig,2,0
+Mollog's Mob,Stalagsquig,3,0
 Mollog's Mob,Spiteshroom,4,0
 Spiteclaw's Swarm,Spiteclaw's Swarm,0,1
 Spiteclaw's Swarm,Skritch Spiteclaw,1,0
 Spiteclaw's Swarm,Krrk the Almost-Trusted,2,0
-Spiteclaw's Swarm,Hungering Skaven,3,0
-Spiteclaw's Swarm,Festering Skaven,4,0
-Spiteclaw's Swarm,Lurking Skaven,5,0
+Spiteclaw's Swarm,Lurking Skaven,3,0
+Spiteclaw's Swarm,Hungering Skaven,4,0
+Spiteclaw's Swarm,Festering Skaven,5,0
 Brethren of the Bolt,Brethren of the Bolt,0,1
 Brethren of the Bolt,Pater Filius,1,0
 Brethren of the Bolt,Friar Galvic,2,0
-Brethren of the Bolt,Scorched Yakob,3,0
-Brethren of the Bolt,Soror Tazat,4,0
+Brethren of the Bolt,Soror Tazat,3,0
+Brethren of the Bolt,Scorched Yakob,4,0
 Brethren of the Bolt,Acolyte Arcus,5,0
 The Skinnerkin,The Skinnerkin,0,1
-The Skinnerkin,Pater Filius,1,0
-The Skinnerkin,Friar Galvic,2,0
-The Skinnerkin,Scorched Yakob,3,0
-The Skinnerkin,Soror Tazat,4,0
-The Skinnerkin,Acolyte Arcus,5,0
+The Skinnerkin,Gristla Tenderhooke,1,0
+The Skinnerkin,Young Master Kretch,2,0
+The Skinnerkin,The Carnskyr,3,0
+The Skinnerkin,Flensemaster Pewdrig,4,0
+The Skinnerkin,Seddrik the Chain,5,0
 The Emberwatch,The Emberwatch,0,1
 The Emberwatch,Ardorn Flamerunner,1,0
 The Emberwatch,Farasa Twice-Risen,2,0
