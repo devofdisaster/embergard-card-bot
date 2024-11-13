@@ -6,10 +6,12 @@ import re
 from discord import Client, Intents, Message
 from src.card_library import Library
 from src.discord.message_factory import (
+    generate_alliance_warband_embeds,
     generate_fighter_embeds,
     generate_multi_embed,
     generate_single_embed,
     generate_warband_embed,
+    generate_warscroll_embed,
 )
 
 
@@ -74,25 +76,38 @@ class EmbergardClient(Client):
         warband_count = len(warband_matches)
         card_count = len(card_matches)
 
+        if 0 == warband_count and 0 == card_count:
+            return await message.channel.send("No matches found")
+
+        if 0 == warband_count and 1 == card_count:
+            return await message.channel.send(embed=generate_single_embed(card_matches))
+
         if 1 == warband_count and 0 == card_count:
-            if 1 == int(warband_matches["IsWarscroll"].array[0]):
+            if warband_matches["WarscrollType"].isnull().array[0]:
                 return await message.channel.send(
-                    embed=generate_warband_embed(
+                    embeds=generate_fighter_embeds(warband_matches),
+                )
+
+            if "alliance" == warband_matches["WarscrollType"].array[0]:
+                return await message.channel.send(
+                    embed=generate_warscroll_embed(warband_matches)
+                )
+
+            if "generic" == warband_matches["WarscrollType"].array[0]:
+                return await message.channel.send(
+                    embeds=generate_alliance_warband_embeds(
                         self._library.get_whole_warband(
-                            warband_matches["Warband"].array[0]
+                            warband_matches["Warband"].array[0],
+                            warband_matches["GrandAlliance"].array[0],
                         )
                     )
                 )
 
             return await message.channel.send(
-                embeds=generate_fighter_embeds(warband_matches),
+                embed=generate_warband_embed(
+                    self._library.get_whole_warband(warband_matches["Warband"].array[0])
+                )
             )
-
-        if 0 == warband_count and 1 == card_count:
-            return await message.channel.send(embed=generate_single_embed(card_matches))
-
-        if 0 == warband_count and 0 == card_count:
-            return await message.channel.send("No matches found")
 
         await message.channel.send(
             embed=generate_multi_embed(card_matches, warband_matches)

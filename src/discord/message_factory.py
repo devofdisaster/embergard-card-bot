@@ -42,9 +42,17 @@ def generate_multi_embed(card_frame: DataFrame, warband_frame: DataFrame) -> Emb
     return embed
 
 
+def generate_warscroll_embed(frame: DataFrame) -> Embed:
+    embed = Embed(
+        title=frame["Name"].array[0],
+    ).set_image(url=_warband_image_link(frame))
+
+    return embed
+
+
 def generate_warband_embed(frame: DataFrame) -> Embed:
-    warscroll = frame[1 == frame["IsWarscroll"]]
-    fighter_names = frame[0 == frame["IsWarscroll"]]["Name"].tolist()
+    warscroll = frame[frame["WarscrollType"].notnull()]
+    fighter_names = frame[frame["WarscrollType"].isnull()]["Name"].tolist()
 
     embed = Embed(
         title=warscroll["Name"].array[0],
@@ -58,6 +66,29 @@ def generate_warband_embed(frame: DataFrame) -> Embed:
         )
 
     return embed
+
+
+def generate_alliance_warband_embeds(frame: DataFrame) -> Embed:
+    warscrolls = frame[frame["WarscrollType"].notnull()]
+    fighters = frame[frame["WarscrollType"].isnull()]
+    fighter_names = fighters["Name"].tolist()
+    fighter_list = Embed(
+        title=fighters["Warband"].array[0],
+    ).set_image(url=_warband_image_link(warscrolls.iloc[[0]]))
+
+    for i in range(0, len(fighter_names), 5):
+        fighter_list.add_field(
+            name="Fighters",
+            value="\n".join(fighter_names[i : i + 5]),
+            inline=True,
+        )
+
+    embeds = [fighter_list]
+
+    for j in range(1, len(warscrolls)):
+        embeds.append(Embed().set_image(url=_warband_image_link(warscrolls.iloc[[j]])))
+
+    return embeds
 
 
 def generate_fighter_embeds(frame: DataFrame) -> List:
@@ -125,14 +156,14 @@ def _thumbnail_link(frame: DataFrame) -> str:
     deck_name = (
         frame["Deck"].array[0].lower().replace(" rivals deck", "").replace(" ", "%20")
     )
-    card_name = frame["Name"].array[0].replace(" ", "-")
+    card_name = frame["Name"].array[0].replace(" ", "-").replace("'", "")
     file_name = f"{card_name}.png"
 
     return f"https://www.underworldsdb.com/cards/{set_name}/{deck_name}/{file_name}"
 
 
 def _warband_image_link(frame: DataFrame, inspired: bool = False) -> str:
-    warband_name = frame["Warband"].array[0].replace(" ", "-").lower()
+    warband_name = frame["Warband"].array[0].replace(" ", "-").replace("'", "").lower()
     image_number = frame["ImageNumber"].array[0]
     file_name = f"{warband_name}-{image_number}{'-inspired' if inspired else ''}.png"
 
