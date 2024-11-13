@@ -156,7 +156,7 @@ def _thumbnail_link(frame: DataFrame) -> str:
     deck_name = (
         frame["Deck"].array[0].lower().replace(" rivals deck", "").replace(" ", "%20")
     )
-    card_name = frame["Name"].array[0].replace(" ", "-")
+    card_name = frame["Name"].array[0].replace(" ", "-").replace("'", "")
     file_name = f"{card_name}.png"
 
     return f"https://www.underworldsdb.com/cards/{set_name}/{deck_name}/{file_name}"
