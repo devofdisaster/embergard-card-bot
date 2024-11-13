@@ -1,88 +1,153 @@
-Warband,Name,ImageNumber,IsWarscroll
-Sepulchral Guard,The Sepulchral Guard,0,1
-Sepulchral Guard,The Sepulchral Warden,1,0
-Sepulchral Guard,The Prince of Dust,2,0
-Sepulchral Guard,The Champion,3,0
-Sepulchral Guard,The Harvester,4,0
-Sepulchral Guard,The Inevitable Petitioner,5,0
-Sepulchral Guard,The Zealous Petitioner,6,0
-Sepulchral Guard,The Rising Petitioner,7,0
-The Farstriders,The Farstriders,0,1
-The Farstriders,Sanson Farstrider,1,0
-The Farstriders,Almeric Eagle-Eye,2,0
-The Farstriders,Elias Swiftblade,3,0
-Ironsoul's Condemnors,Ironsoul's Condemnors,0,1
-Ironsoul's Condemnors,Gwynne Ironsoul,1,0
-Ironsoul's Condemnors,Tavian of Sarnassus,2,0
-Ironsoul's Condemnors,Brodus Blightbane,3,0
-The Thricefold Discord,The Thricefold Discord,0,1
-The Thricefold Discord,Vexmor the Excessively Indolent,1,0
-The Thricefold Discord,"Lascivyr, the Bladed Blessing",2,0
-The Thricefold Discord,Vashtiss the Coiled,3,0
-Cyreni's Razors,Cyreni's Razors,0,1
-Cyreni's Razors,Cyreni of the Abyss,1,0
-Cyreni's Razors,Alathyrr,2,0
-Cyreni's Razors,Renglaith,3,0
-Cyreni's Razors,Cephanyr,4,0
-Daggok's Stab-ladz,Daggok's Stab-ladz,0,1
-Daggok's Stab-ladz,Daggok Finksteala,1,0
-Daggok's Stab-ladz,Grakk da Hook,2,0
-Daggok's Stab-ladz,Hurk da Howla,3,0
-Daggok's Stab-ladz,Jagz da Bleeda,4,0
-Zondara's Gravebreakers,Zondara's Gravebreakers,0,1
-Zondara's Gravebreakers,Zondara Rivenheart,1,0
-Zondara's Gravebreakers,Lost Ferlain,2,0
-Zondara's Gravebreakers,Cracktomb,3,0
-Zondara's Gravebreakers,Toyl,4,0
-Zondara's Gravebreakers,Pikk,5,0
-Thorns of the Briar Queen,Thorns of the Briar Queen,0,1
-Thorns of the Briar Queen,Briar Queen,1,0
-Thorns of the Briar Queen,Varclav the Cruel,2,0
-Thorns of the Briar Queen,The Ever-hanged,3,0
-Thorns of the Briar Queen,The Uncrowned,4,0
-Thorns of the Briar Queen,The Silenced,5,0
-Thorns of the Briar Queen,The Exhumed,6,0
-Thorns of the Briar Queen,The Ironwretch,7,0
-Zarbag'z Gitz,Zarbag'z Gitz,0,1
-Zarbag'z Gitz,Zarbag,1,0
-Zarbag'z Gitz,Drizgit da Squig Herder,2,0
-Zarbag'z Gitz,Prog da Netter,3,0
-Zarbag'z Gitz,Bonekrakka,4,0
-Zarbag'z Gitz,Gobbaluk,5,0
-Zarbag'z Gitz,Snirk Sourtongue,6,0
-Zarbag'z Gitz,Redkap,7,0
-Zarbag'z Gitz,Stikkit,8,0
-Zarbag'z Gitz,Dibbz,9,0
-Mollog's Mob,Mollog's Mob,0,1
-Mollog's Mob,Mollog the Mighty,1,0
-Mollog's Mob,Bat Squig,2,0
-Mollog's Mob,Stalagsquig,3,0
-Mollog's Mob,Spiteshroom,4,0
-Spiteclaw's Swarm,Spiteclaw's Swarm,0,1
-Spiteclaw's Swarm,Skritch Spiteclaw,1,0
-Spiteclaw's Swarm,Krrk the Almost-Trusted,2,0
-Spiteclaw's Swarm,Lurking Skaven,3,0
-Spiteclaw's Swarm,Hungering Skaven,4,0
-Spiteclaw's Swarm,Festering Skaven,5,0
-Brethren of the Bolt,Brethren of the Bolt,0,1
-Brethren of the Bolt,Pater Filius,1,0
-Brethren of the Bolt,Friar Galvic,2,0
-Brethren of the Bolt,Soror Tazat,3,0
-Brethren of the Bolt,Scorched Yakob,4,0
-Brethren of the Bolt,Acolyte Arcus,5,0
-The Skinnerkin,The Skinnerkin,0,1
-The Skinnerkin,Gristla Tenderhooke,1,0
-The Skinnerkin,Young Master Kretch,2,0
-The Skinnerkin,The Carnskyr,3,0
-The Skinnerkin,Flensemaster Pewdrig,4,0
-The Skinnerkin,Seddrik the Chain,5,0
-The Emberwatch,The Emberwatch,0,1
-The Emberwatch,Ardorn Flamerunner,1,0
-The Emberwatch,Farasa Twice-Risen,2,0
-The Emberwatch,Yurik Velzane,3,0
-Zikkit's Tunnelpack,Zikkit's Tunnelpack,0,1
-Zikkit's Tunnelpack,Zikkit Rockgnaw,1,0
-Zikkit's Tunnelpack,Rittak Verm,2,0
-Zikkit's Tunnelpack,Krittatok,3,0
-Zikkit's Tunnelpack,Nitch Singe-snout,4,0
-Zikkit's Tunnelpack,Tik Tik,5,0
+Warband,Name,ImageNumber,WarscrollType,GrandAlliance
+Grand Alliance Order,Grand Alliance Order: Crusaders,0,alliance,
+Grand Alliance Order,Grand Alliance Order: Protectors,0,alliance,
+Domitan's Stormcoven,Domitan's Stormcoven,0,generic,Grand Alliance Order
+Domitan's Stormcoven,"Domitan, Eye of the Storm",1,,
+Domitan's Stormcoven,Leona Stratosi,2,,
+Domitan's Stormcoven,"Sarpon, the Cyclone",3,,
+Gryselle's Arenai,Gryselle's Arenai,0,generic,Grand Alliance Order
+Gryselle's Arenai,"Gryselle, the Slaughterer",1,,
+Gryselle's Arenai,"Thrialla, the Lash",2,,
+Gryselle's Arenai,"Retaria, the Entangler",3,,
+Gryselle's Arenai,"Kalexis, the Silvered Blur",4,,
+Gryselle's Arenai,"Traxia, the Aegis",5,,
+The Shadeborn,The Shadeborn,0,generic,Grand Alliance Order
+The Shadeborn,Slythael Shadestalker,1,,
+The Shadeborn,Drusylla Vyserax,2,,
+The Shadeborn,Sylarc Greyblood,3,,
+The Shadeborn,Valyssa Umbrael,4,,
+Xandire's Truthseekers,Xandire's Truthseekers,0,generic,Grand Alliance Order
+Xandire's Truthseekers,Calthia Xandire,1,,
+Xandire's Truthseekers,Dhoraz Giant-fell,2,,
+Xandire's Truthseekers,Luxa Stormrider,3,,
+Xandire's Truthseekers,Taros,4,,
+The Storm of Celestus,The Storm of Celestus,0,generic,Grand Alliance Order
+The Storm of Celestus,Drakan Celestus,1,,
+The Storm of Celestus,Aphus the Brave,2,,
+The Storm of Celestus,Mellisan Star-sighted,3,,
+The Storm of Celestus,Sleek,4,,
+Elathain's Soulraid,Elathain's Soulraid,0,generic,Grand Alliance Order
+Elathain's Soulraid,Elathain Ill-fated,1,,
+Elathain's Soulraid,Fuirann,2,,
+Elathain's Soulraid,Tammael,3,,
+Elathain's Soulraid,Duinclaw,4,,
+Elathain's Soulraid,Spinefin,5,,
+Starblood Stalkers,Starblood Stalkers,0,generic,Grand Alliance Order
+Starblood Stalkers,"Kixi-taka, the Diviner",1,,
+Starblood Stalkers,Klaq-trok,2,,
+Starblood Stalkers,Otapatl,3,,
+Starblood Stalkers,Huachi,4,,
+Starblood Stalkers,Tok,5,,
+Starblood Stalkers,Xepic,6,,
+Morgwaeth's Blade-coven,Morgwaeth's Blade-coven,0,generic,Grand Alliance Order
+Morgwaeth's Blade-coven,Morgwaeth the Blooded,1,,
+Morgwaeth's Blade-coven,Kyrae,2,,
+Morgwaeth's Blade-coven,Khamyss,3,,
+Morgwaeth's Blade-coven,Kyrssa,4,,
+Morgwaeth's Blade-coven,Lethyr,5,,
+Skaeth's Wild Hunt,Skaeth's Wild Hunt,0,generic,Grand Alliance Order
+Skaeth's Wild Hunt,Skaeth the Huntsman,1,,
+Skaeth's Wild Hunt,"Karthaen, Huntcaller",2,,
+Skaeth's Wild Hunt,"Sheoch, Kurnothi Tracker",3,,
+Skaeth's Wild Hunt,"Althaen, Kurnothi Tracker",4,,
+Skaeth's Wild Hunt,"Lighaen, Malkyn",5,,
+Stormsire's Cursebreakers,Stormsire's Cursebreakers,0,generic,Grand Alliance Order
+Stormsire's Cursebreakers,Averon Stormsire,1,,
+Stormsire's Cursebreakers,Ammis Dawnguard,2,,
+Stormsire's Cursebreakers,Rastus the Charmed,3,,
+Steelheart's Champions,Steelheart's Champions,0,generic,Grand Alliance Order
+Steelheart's Champions,Severin Steelheart,1,,
+Steelheart's Champions,Obryn the Bold,2,,
+Steelheart's Champions,Angharad Brightshield,3,,
+Chosen Axes,Chosen Axes,0,generic,Grand Alliance Order
+Chosen Axes,Fjul-Grimnir,1,,
+Chosen Axes,Tefk Flamebearer,2,,
+Chosen Axes,Vol Orrukbane,3,,
+Chosen Axes,Mad Maegrim,4,,
+Sepulchral Guard,The Sepulchral Guard,0,bespoke,
+Sepulchral Guard,The Sepulchral Warden,1,,
+Sepulchral Guard,The Prince of Dust,2,,
+Sepulchral Guard,The Champion,3,,
+Sepulchral Guard,The Harvester,4,,
+Sepulchral Guard,The Inevitable Petitioner,5,,
+Sepulchral Guard,The Zealous Petitioner,6,,
+Sepulchral Guard,The Rising Petitioner,7,,
+The Farstriders,The Farstriders,0,bespoke,
+The Farstriders,Sanson Farstrider,1,,
+The Farstriders,Almeric Eagle-Eye,2,,
+The Farstriders,Elias Swiftblade,3,,
+Ironsoul's Condemnors,Ironsoul's Condemnors,0,bespoke,
+Ironsoul's Condemnors,Gwynne Ironsoul,1,,
+Ironsoul's Condemnors,Tavian of Sarnassus,2,,
+Ironsoul's Condemnors,Brodus Blightbane,3,,
+The Thricefold Discord,The Thricefold Discord,0,bespoke,
+The Thricefold Discord,Vexmor the Excessively Indolent,1,,
+The Thricefold Discord,Vashtiss the Coiled,2,,
+The Thricefold Discord,"Lascivyr, the Bladed Blessing",3,,
+Cyreni's Razors,Cyreni's Razors,0,bespoke,
+Cyreni's Razors,Cyreni of the Abyss,1,,
+Cyreni's Razors,Alathyrr,2,,
+Cyreni's Razors,Renglaith,3,,
+Cyreni's Razors,Cephanyr,4,,
+Daggok's Stab-ladz,Daggok's Stab-ladz,0,bespoke,
+Daggok's Stab-ladz,Daggok Finksteala,1,,
+Daggok's Stab-ladz,Grakk da Hook,2,,
+Daggok's Stab-ladz,Hurk da Howla,3,,
+Daggok's Stab-ladz,Jagz da Bleeda,4,,
+Zondara's Gravebreakers,Zondara's Gravebreakers,0,bespoke,
+Zondara's Gravebreakers,Zondara Rivenheart,1,,
+Zondara's Gravebreakers,Lost Ferlain,2,,
+Zondara's Gravebreakers,Cracktomb,3,,
+Zondara's Gravebreakers,Toyl,4,,
+Zondara's Gravebreakers,Pikk,5,,
+Thorns of the Briar Queen,Thorns of the Briar Queen,0,bespoke,
+Thorns of the Briar Queen,Briar Queen,1,,
+Thorns of the Briar Queen,Varclav the Cruel,2,,
+Thorns of the Briar Queen,The Ever-hanged,3,,
+Thorns of the Briar Queen,The Uncrowned,4,,
+Thorns of the Briar Queen,The Silenced,5,,
+Thorns of the Briar Queen,The Exhumed,6,,
+Thorns of the Briar Queen,The Ironwretch,7,,
+Zarbag'z Gitz,Zarbag'z Gitz,0,bespoke,
+Zarbag'z Gitz,Zarbag,1,,
+Zarbag'z Gitz,Drizgit da Squig Herder,2,,
+Zarbag'z Gitz,Prog da Netter,3,,
+Zarbag'z Gitz,Bonekrakka,4,,
+Zarbag'z Gitz,Gobbaluk,5,,
+Zarbag'z Gitz,Snirk Sourtongue,6,,
+Zarbag'z Gitz,Redkap,7,,
+Zarbag'z Gitz,Stikkit,8,,
+Zarbag'z Gitz,Dibbz,9,,
+Mollog's Mob,Mollog's Mob,0,bespoke,
+Mollog's Mob,Mollog the Mighty,1,,
+Mollog's Mob,Bat Squig,2,,
+Mollog's Mob,Stalagsquig,3,,
+Mollog's Mob,Spiteshroom,4,,
+Spiteclaw's Swarm,Spiteclaw's Swarm,0,bespoke,
+Spiteclaw's Swarm,Skritch Spiteclaw,1,,
+Spiteclaw's Swarm,Krrk the Almost-Trusted,2,,
+Spiteclaw's Swarm,Lurking Skaven,3,,
+Spiteclaw's Swarm,Hungering Skaven,4,,
+Spiteclaw's Swarm,Festering Skaven,5,,
+Brethren of the Bolt,Brethren of the Bolt,0,bespoke,
+Brethren of the Bolt,Pater Filius,1,,
+Brethren of the Bolt,Friar Galvic,2,,
+Brethren of the Bolt,Soror Tazat,3,,
+Brethren of the Bolt,Scorched Yakob,4,,
+Brethren of the Bolt,Acolyte Arcus,5,,
+The Skinnerkin,The Skinnerkin,0,bespoke,
+The Skinnerkin,Gristla Tenderhooke,1,,
+The Skinnerkin,Young Master Kretch,2,,
+The Skinnerkin,The Carnskyr,3,,
+The Skinnerkin,Flensemaster Pewdrig,4,,
+The Skinnerkin,Seddrik the Chain,5,,
+The Emberwatch,The Emberwatch,0,bespoke,
+The Emberwatch,Ardorn Flamerunner,1,,
+The Emberwatch,Farasa Twice-Risen,2,,
+The Emberwatch,Yurik Velzane,3,,
+Zikkit's Tunnelpack,Zikkit's Tunnelpack,0,bespoke,
+Zikkit's Tunnelpack,Zikkit Rockgnaw,1,,
+Zikkit's Tunnelpack,Rittak Verm,2,,
+Zikkit's Tunnelpack,Krittatok,3,,
+Zikkit's Tunnelpack,Nitch Singe-snout,4,,
+Zikkit's Tunnelpack,Tik Tik,5,,
