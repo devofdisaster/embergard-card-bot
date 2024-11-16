@@ -167,6 +167,10 @@ def _warband_image_link(frame: DataFrame, inspired: bool = False) -> str:
     image_number = frame["ImageNumber"].array[0]
     file_name = f"{warband_name}-{image_number}{'-inspired' if inspired else ''}.png"
 
+    if "alliance" == frame["WarscrollType"].array[0]:
+        warband_name = warband_name.replace("grand-alliance-", "")
+        file_name = f"{warband_name}-0{image_number}.png"
+
     return f"https://www.underworldsdb.com/cards/fighters/{file_name}"
 
 
