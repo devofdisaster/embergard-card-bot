@@ -12,4 +12,6 @@ icon_map = {
     ":dfSup:": Icons.DEF_FLANKED.value,
     ":dfSup2:": Icons.DEF_SURROUNDED.value,
     ":Hex:": Icons.RANGE.value,
+    ":core:": Icons.CORE.value,
+    ":surge:": Icons.SURGE.value,
 }
