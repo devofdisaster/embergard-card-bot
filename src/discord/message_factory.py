@@ -4,7 +4,7 @@ from pandas import DataFrame
 
 from discord import Embed
 from src.discord.custom_icons import Icons
-from src.discord.uwdb_to_bot_icon_map import icon_map
+from src.discord.replacement_icon_map import icon_map
 
 
 def generate_single_embed(frame: DataFrame) -> Embed:
@@ -124,7 +124,7 @@ def _build_icons(frame: DataFrame) -> str:
 def _build_objective_icons(frame: DataFrame) -> str:
     glory = int(frame["Glory/Cost"].array[0])
     add_surge = "Surge" == frame["ObjType"].array[0]
-    obj_string = f"{Icons.OBJECTIVE.value}{':zap:' if add_surge else ''}"
+    obj_string = f"{Icons.OBJECTIVE.value}{Icons.SURGE.value if add_surge else ''}"
     glories_string = (" - " + Icons.GLORY.value * glory) if glory else ""
 
     return obj_string + glories_string + "\n"

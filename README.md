@@ -54,10 +54,15 @@ Requires Python 3.9
 ### Card data
 
 The bot uses card data taken directly from [UnderworldsDB](https://underworldsdb.com). Every time a new product comes out, the [local card library](src/resources/library.csv) has to be updated with the new data.
+The fighter and warscroll data in [warbands.csv](src/resources/warbands.csv) has to be updated manually, as UnderworldsDB doesn't use such a data sheet.
+Additionally, some content has been added to the card descriptions, which needs to be added manually to the data provided by UWDB whenever a new product is released:
+- core ability icons (`:core:`)
+- surge ability icons (`:surge:`)
 
 ### Discord icons
 
-The UWDB data uses a particular set of icons in the card descriptions. Since this bot uses a custom set of icons, an icon map has been defined in [uwdb_to_bot_icon_map.py](src/discord/uwdb_to_bot_icon_map.py), and these are used to replace the UWDB ones in the card description when rendering a single card message.
+The UWDB data uses a particular set of icons in the card descriptions. Additionally, some additional icons have been added to the card descriptions (like the "core ability" icon).
+Since this bot uses a custom set of icons, an icon map has been defined in [replacement_icon_map.py](src/discord/replacement_icon_map.py), and these are used to replace the icons in the card description with proper emojis when rendering a single card message.
 If you'd like to use your own set in a forked project, simply replace the values in [custom_icons.py](src/discord/custom_icons.py) with links to icons from any server that your bot has access to. 
 To get the specific format used, just type `\:icon_name:` in Discord.
 
