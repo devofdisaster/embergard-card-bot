@@ -6,6 +6,9 @@ from discord import Embed
 from src.discord.custom_icons import Icons
 from src.discord.replacement_icon_map import icon_map
 
+uwdb_url = "https://www.underworldsdb.com"
+warbands_url = f"{uwdb_url}/warbands.php"
+
 
 def generate_single_embed(frame: DataFrame) -> Embed:
     embed = Embed(
@@ -70,11 +73,14 @@ def generate_warband_embed(frame: DataFrame) -> Embed:
 
 def generate_alliance_warband_embeds(frame: DataFrame) -> Embed:
     warscrolls = frame[frame["WarscrollType"].notnull()]
+    first_scroll = warscrolls.iloc[[0]]
     fighters = frame[frame["WarscrollType"].isnull()]
     fighter_names = fighters["Name"].tolist()
     fighter_list = Embed(
         title=fighters["Warband"].array[0],
-    ).set_image(url=_warband_image_link(warscrolls.iloc[[0]]))
+        url=warbands_url,
+    ).set_image(url=_warband_image_link(first_scroll))
+    description = f"Choose between:\n- {first_scroll['Name'].array[0]}\n"
 
     for i in range(0, len(fighter_names), 5):
         fighter_list.add_field(
@@ -86,7 +92,13 @@ def generate_alliance_warband_embeds(frame: DataFrame) -> Embed:
     embeds = [fighter_list]
 
     for j in range(1, len(warscrolls)):
-        embeds.append(Embed().set_image(url=_warband_image_link(warscrolls.iloc[[j]])))
+        current_scroll = warscrolls.iloc[[j]]
+        embeds.append(
+            Embed(url=warbands_url).set_image(url=_warband_image_link(current_scroll))
+        )
+        description = f"{description}- {current_scroll['Name'].array[0]}\n"
+
+    fighter_list.description = description
 
     return embeds
 
@@ -95,10 +107,12 @@ def generate_fighter_embeds(frame: DataFrame) -> List:
     warband_name = frame["Warband"].array[0]
 
     return [
-        Embed(title=frame["Name"].array[0]).set_image(url=_warband_image_link(frame)),
-        Embed()
-        .set_image(url=_warband_image_link(frame, inspired=True))
+        Embed(title=frame["Name"].array[0], url=warbands_url)
+        .set_image(url=_warband_image_link(frame))
         .set_footer(text=f"Warband: {warband_name}"),
+        Embed(url=warbands_url).set_image(
+            url=_warband_image_link(frame, inspired=True)
+        ),
     ]
 
 
@@ -159,7 +173,7 @@ def _thumbnail_link(frame: DataFrame) -> str:
     card_name = frame["Name"].array[0].replace(" ", "-").replace("'", "")
     file_name = f"{card_name}.png"
 
-    return f"https://www.underworldsdb.com/cards/{set_name}/{deck_name}/{file_name}"
+    return f"{uwdb_url}/cards/{set_name}/{deck_name}/{file_name}"
 
 
 def _warband_image_link(frame: DataFrame, inspired: bool = False) -> str:
@@ -171,7 +185,7 @@ def _warband_image_link(frame: DataFrame, inspired: bool = False) -> str:
         warband_name = warband_name.replace("grand-alliance-", "")
         file_name = f"{warband_name}-0{image_number}.png"
 
-    return f"https://www.underworldsdb.com/cards/fighters/{file_name}"
+    return f"{uwdb_url}/cards/fighters/{file_name}"
 
 
 def _build_footer(frame: DataFrame) -> str:
