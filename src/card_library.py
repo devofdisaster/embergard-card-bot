@@ -16,7 +16,7 @@ class Library:
         if not isinstance(self._card_memory, DataFrame):
             self.load()
 
-        lowercase_query = query.lower()
+        lowercase_query = query.lower().replace("’", "'")
         matches = self._card_memory[
             [lowercase_query in value.lower() for value in self._card_memory["Name"]]
         ].drop_duplicates(subset=["Name"])
@@ -34,7 +34,7 @@ class Library:
         if not isinstance(self._warband_memory, DataFrame):
             self.load()
 
-        lowercase_query = query.lower()
+        lowercase_query = query.lower().replace("’", "'")
         matches = self._warband_memory[
             [lowercase_query in value.lower() for value in self._warband_memory["Name"]]
         ]
