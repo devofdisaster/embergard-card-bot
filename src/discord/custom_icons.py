@@ -2,9 +2,9 @@ from enum import Enum
 
 
 class Icons(Enum):
-    PLOY = "<:ecb_ploy:1304136918514139237>"
-    UPGRADE = "<:ecb_upg:1304136990588932160>"
-    OBJECTIVE = "<:ecb_obj:1304136790596124752>"
+    PLOY = "<:ecb_ploy_emb:1310516053947715676>"
+    UPGRADE = "<:ecb_upg_emb:1310516091742847007>"
+    OBJECTIVE = "<:ecb_obj_emb:1310515950621032471>"
     CORE = "<:ecb_core:1307045495633346633>"
     SURGE = "<:ecb_surge:1307045498808565780>"
     INSPIRED = "<:ecb_inspired:1307045497290358876>"
