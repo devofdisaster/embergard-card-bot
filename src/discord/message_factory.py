@@ -140,19 +140,23 @@ def _build_objective_icons(frame: DataFrame) -> str:
     add_surge = "Surge" == frame["ObjType"].array[0]
     obj_string = f"{Icons.OBJECTIVE.value}{Icons.SURGE.value if add_surge else ''}"
     glories_string = (" - " + Icons.GLORY.value * glory) if glory else ""
+    forsaken_string = " - :no_entry:" if frame["Forsaken"].notnull().array[0] else ""
 
-    return obj_string + glories_string + "\n"
+    return obj_string + glories_string + forsaken_string + "\n"
 
 
 def _build_ploy_icons(frame: DataFrame) -> str:
-    return f"{Icons.PLOY.value}\n"
+    forsaken_string = " - :no_entry:" if frame["Forsaken"].notnull().array[0] else ""
+
+    return Icons.PLOY.value + forsaken_string + "\n"
 
 
 def _build_upgrade_icons(frame: DataFrame) -> str:
     glory = int(frame["Glory/Cost"].array[0])
     glories_string = (" - " + Icons.GLORY.value * glory) if glory else ""
+    forsaken_string = " - :no_entry:" if frame["Forsaken"].notnull().array[0] else ""
 
-    return Icons.UPGRADE.value + glories_string + "\n"
+    return Icons.UPGRADE.value + glories_string + forsaken_string + "\n"
 
 
 def _replace_description_icons(frame: DataFrame) -> str:
