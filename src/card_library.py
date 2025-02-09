@@ -22,11 +22,15 @@ class Library:
         extracted = process.extract(
             lowercase_query, card_names, scorer=fuzz.partial_ratio, limit=10
         )
-
+        exact_match_names = [
+            match[0] for match in extracted if match[0].lower() == lowercase_query
+        ]
         best_match_names = [match[0] for match in extracted if match[1] >= 80]
 
         return self._card_memory[
-            self._card_memory["Name"].isin(best_match_names)
+            self._card_memory["Name"].isin(
+                exact_match_names if 1 == len(exact_match_names) else best_match_names
+            )
         ].drop_duplicates(subset="Name")
 
     def search_warbands(self, query: str) -> DataFrame:
@@ -38,10 +42,16 @@ class Library:
         extracted = process.extract(
             lowercase_query, warband_names, scorer=fuzz.partial_ratio, limit=10
         )
-
+        exact_match_names = [
+            match[0] for match in extracted if match[0].lower() == lowercase_query
+        ]
         best_match_names = [match[0] for match in extracted if match[1] >= 80]
 
-        return self._warband_memory[self._warband_memory["Name"].isin(best_match_names)]
+        return self._warband_memory[
+            self._warband_memory["Name"].isin(
+                exact_match_names if 1 == len(exact_match_names) else best_match_names
+            )
+        ]
 
     def get_whole_warband(
         self, warband_name: str, grand_alliance: str = None
