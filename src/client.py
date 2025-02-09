@@ -148,10 +148,8 @@ class EmbergardClient(Client):
 
     async def send_help_message(self, message: Message) -> None:
         help_text = (
-            "To search for cards or warbands, use the following format: `((search_term))`\n"
-            "For example: `((ghartok))`\n"
-            "You can also search for multiple terms at once:\n"
-            "`((ghartok)) ((fortitude)) ((pandaemonium)) ((grand alliance death))`\n\n"
-            "To get this help message, use: `((help))`"
+            "- Use **((search_term))** to search for cards or warbands, for example `((ghartok))`\n"
+            "- Use multiple search terms in one message: `((ghartok)) ((fortitude)) ((pandaemonium)) ((alliance death))`\n\n"
+            "- Use **((help))** to get this exceedingly helpful message"
         )
         await message.channel.send(help_text)
