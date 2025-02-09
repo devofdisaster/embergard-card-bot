@@ -56,68 +56,102 @@ class EmbergardClient(Client):
         if message.author == self.user:
             return
 
-        match = re.search(r"\(\(\s?(.*?)\s?\)\)", message.content)
+        matches = re.findall(r"\(\(\s?(.*?)\s?\)\)", message.content)
+        match_count = len(matches)
 
-        if not match:
+        if 0 == match_count:
             return
 
-        content = match.group(1).strip()
+        if 1 == match_count and "help" == matches[0].strip():
+            return await self.send_help_message(message=message)
 
-        if 0 == len(content):
-            return
+        for match in matches:
+            query = match.strip()
 
-        if len(content) < 3:
-            return await message.channel.send(
-                "Search term too short, must be at least Tok-long"
-            )
+            if 0 == len(query):
+                return
 
-        lowercase_query = content.lower().replace("’", "'")
-        warband_matches = self._library.search_warbands(lowercase_query)
-        card_matches = self._library.search_cards(lowercase_query)
-        exact_card_matches = card_matches[
-            [lowercase_query == value.lower() for value in card_matches["Name"]]
-        ]
-        exact_warband_matches = warband_matches[
-            [lowercase_query == value.lower() for value in warband_matches["Name"]]
-        ]
-        warband_count = len(warband_matches)
-        card_count = len(card_matches)
+            if len(query) < 3:
+                if 1 == match_count:
+                    return await message.channel.send(
+                        "Search term too short, must be at least Tok-long"
+                    )
 
-        if 0 == warband_count and 0 == card_count:
-            return await message.channel.send("No matches found")
+                continue
 
-        if (0 == warband_count and 1 == card_count) or (1 == len(exact_card_matches)):
-            return await message.channel.send(embed=generate_single_embed(card_matches))
+            lowercase_query = query.lower().replace("’", "'")
+            warband_matches = self._library.search_warbands(lowercase_query)
+            card_matches = self._library.search_cards(lowercase_query)
+            exact_card_matches = card_matches[
+                [lowercase_query == value.lower() for value in card_matches["Name"]]
+            ]
+            exact_warband_matches = warband_matches[
+                [lowercase_query == value.lower() for value in warband_matches["Name"]]
+            ]
+            warband_count = len(warband_matches)
+            card_count = len(card_matches)
 
-        if (1 == warband_count and 0 == card_count) or (
-            1 == len(exact_warband_matches)
-        ):
-            if warband_matches["WarscrollType"].isnull().array[0]:
-                return await message.channel.send(
-                    embeds=generate_fighter_embeds(warband_matches),
-                )
+            if 0 == warband_count and 0 == card_count:
+                await message.channel.send("No matches found")
 
-            if "alliance" == warband_matches["WarscrollType"].array[0]:
-                return await message.channel.send(
-                    embed=generate_warscroll_embed(warband_matches)
-                )
+                continue
 
-            if "generic" == warband_matches["WarscrollType"].array[0]:
-                return await message.channel.send(
-                    embeds=generate_alliance_warband_embeds(
+            if (0 == warband_count and 1 == card_count) or (
+                1 == len(exact_card_matches)
+            ):
+                await message.channel.send(embed=generate_single_embed(card_matches))
+
+                continue
+
+            if (1 == warband_count and 0 == card_count) or (
+                1 == len(exact_warband_matches)
+            ):
+                if warband_matches["WarscrollType"].isnull().array[0]:
+                    await message.channel.send(
+                        embeds=generate_fighter_embeds(warband_matches),
+                    )
+
+                    continue
+
+                if "alliance" == warband_matches["WarscrollType"].array[0]:
+                    await message.channel.send(
+                        embed=generate_warscroll_embed(warband_matches)
+                    )
+
+                    continue
+
+                if "generic" == warband_matches["WarscrollType"].array[0]:
+                    await message.channel.send(
+                        embeds=generate_alliance_warband_embeds(
+                            self._library.get_whole_warband(
+                                warband_matches["Warband"].array[0],
+                                warband_matches["GrandAlliance"].array[0],
+                            )
+                        )
+                    )
+
+                    continue
+
+                await message.channel.send(
+                    embed=generate_warband_embed(
                         self._library.get_whole_warband(
-                            warband_matches["Warband"].array[0],
-                            warband_matches["GrandAlliance"].array[0],
+                            warband_matches["Warband"].array[0]
                         )
                     )
                 )
 
-            return await message.channel.send(
-                embed=generate_warband_embed(
-                    self._library.get_whole_warband(warband_matches["Warband"].array[0])
-                )
+                continue
+
+            await message.channel.send(
+                embed=generate_multi_embed(card_matches, warband_matches)
             )
 
-        await message.channel.send(
-            embed=generate_multi_embed(card_matches, warband_matches)
+    async def send_help_message(self, message: Message) -> None:
+        help_text = (
+            "To search for cards or warbands, use the following format: `((search_term))`\n"
+            "For example: `((ghartok))`\n"
+            "You can also search for multiple terms at once:\n"
+            "`((ghartok)) ((fortitude)) ((pandaemonium)) ((grand alliance death))`\n\n"
+            "To get this help message, use: `((help))`"
         )
+        await message.channel.send(help_text)
