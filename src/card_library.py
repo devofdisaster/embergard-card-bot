@@ -1,3 +1,4 @@
+from fuzzywuzzy import fuzz, process
 from pandas import DataFrame, isna, read_csv
 
 
@@ -17,36 +18,30 @@ class Library:
             self.load()
 
         lowercase_query = query.lower().replace("’", "'")
-        matches = self._card_memory[
-            [lowercase_query in value.lower() for value in self._card_memory["Name"]]
-        ].drop_duplicates(subset=["Name"])
+        card_names = self._card_memory["Name"].drop_duplicates().tolist()
+        extracted = process.extract(
+            lowercase_query, card_names, scorer=fuzz.partial_ratio, limit=10
+        )
 
-        exact_matches = matches[
-            [lowercase_query == value.lower() for value in matches["Name"]]
-        ]
+        best_match_names = [match[0] for match in extracted if match[1] >= 80]
 
-        if 1 == len(exact_matches):
-            return exact_matches
-
-        return matches
+        return self._card_memory[
+            self._card_memory["Name"].isin(best_match_names)
+        ].drop_duplicates(subset="Name")
 
     def search_warbands(self, query: str) -> DataFrame:
         if not isinstance(self._warband_memory, DataFrame):
             self.load()
 
         lowercase_query = query.lower().replace("’", "'")
-        matches = self._warband_memory[
-            [lowercase_query in value.lower() for value in self._warband_memory["Name"]]
-        ]
+        warband_names = self._warband_memory["Name"].tolist()
+        extracted = process.extract(
+            lowercase_query, warband_names, scorer=fuzz.partial_ratio, limit=10
+        )
 
-        exact_matches = matches[
-            [lowercase_query == value.lower() for value in matches["Name"]]
-        ]
+        best_match_names = [match[0] for match in extracted if match[1] >= 80]
 
-        if 1 == len(exact_matches):
-            return exact_matches
-
-        return matches
+        return self._warband_memory[self._warband_memory["Name"].isin(best_match_names)]
 
     def get_whole_warband(
         self, warband_name: str, grand_alliance: str = None
