@@ -23,8 +23,6 @@ class Library:
             lowercase_query, card_names, scorer=fuzz.partial_ratio, limit=10
         )
 
-        print(extracted)
-
         best_match_names = [match[0] for match in extracted if match[1] >= 80]
 
         return self._card_memory[
@@ -40,8 +38,6 @@ class Library:
         extracted = process.extract(
             lowercase_query, warband_names, scorer=fuzz.partial_ratio, limit=10
         )
-
-        print(extracted)
 
         best_match_names = [match[0] for match in extracted if match[1] >= 80]
 
