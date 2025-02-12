@@ -22,7 +22,10 @@ Requires Python 3.9
     make install
     ```
 4. Create a developer Discord account and set up the application you'll be using for the bot
-4. Copy the `.env.dist` file as `.env` and fill in the CLIENT_TOKEN variable with the token for the chosen application
+5. Copy the `.env.dist` file as `.env` and fill in:
+
+    1. `CLIENT_TOKEN` variable with the token for the chosen application
+    2. `IMAGES_URL` variable with the base URL to custom images (like for plot cards)
 
 ## Usage
 
@@ -53,11 +56,33 @@ Requires Python 3.9
 ## Forking for modifications
 ### Card data
 
-The bot uses card data taken directly from [UnderworldsDB](https://underworldsdb.com). Every time a new product comes out, the [local card library](src/resources/library.csv) has to be updated with the new data.
+The bot uses card data taken directly from [UnderworldsDB](https://underworldsdb.com), then trimmed of the unnecessary data. 
+
+Every time a new product comes out, the [local card library](src/resources/library.csv) has to be updated with the new data.
+
 The fighter and warscroll data in [warbands.csv](src/resources/warbands.csv) has to be updated manually, as UnderworldsDB doesn't use such a data sheet.
 Additionally, some content has been added to the card descriptions, which needs to be added manually to the data provided by UWDB whenever a new product is released:
 - core ability icons (`:core:`)
 - surge ability icons (`:surge:`)
+
+### Custom images
+
+In some cases (like plot cards) you might want to provide custom images for cards, either because you want to bypass UnderworldsDB or because the particular image is not available there. 
+
+To do so, fill in the `IMAGES_URL` environment variable in your `.env` file, as well as the `CustomImage` column in the [library.csv](src/resources/warbands.csv) file.
+
+For example:
+
+`.env`:
+```.env
+IMAGES_URL="https://some.image.hosting.com/some-folder/nested/folder"
+```
+
+`library.csv`:
+```csv
+Set,Number,Name,(...),CustomImage
+Embergard,CC0,Countdown to Cataclysm,(...),"/ctc/plot.png"
+```
 
 ### Discord icons
 

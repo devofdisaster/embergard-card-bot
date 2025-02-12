@@ -1,3 +1,4 @@
+import os
 from ast import List
 
 from pandas import DataFrame
@@ -126,6 +127,9 @@ def _build_icons(frame: DataFrame) -> str:
     if type_value == "Objective":
         return _build_objective_icons(frame)
 
+    if type_value == "Plot":
+        return _build_plot_icons(frame)
+
     if type_value == "Ploy":
         return _build_ploy_icons(frame)
 
@@ -143,6 +147,18 @@ def _build_objective_icons(frame: DataFrame) -> str:
     forsaken_string = " - :no_entry:" if frame["Forsaken"].notnull().array[0] else ""
 
     return obj_string + glories_string + forsaken_string + "\n"
+
+
+def _build_plot_icons(frame: DataFrame) -> str:
+    forsaken_string = " - :no_entry:" if frame["Forsaken"].notnull().array[0] else ""
+    plot_card_id = "PLOT_" + frame["Number"].array[0]
+    plot_icon = (
+        Icons[plot_card_id].value
+        if isinstance(Icons[plot_card_id], Icons)
+        else ":question:"
+    )
+
+    return plot_icon + forsaken_string + "\n"
 
 
 def _build_ploy_icons(frame: DataFrame) -> str:
@@ -169,6 +185,10 @@ def _replace_description_icons(frame: DataFrame) -> str:
 
 
 def _thumbnail_link(frame: DataFrame) -> str:
+    if frame["CustomImage"].notnull().array[0]:
+        custom_url = os.getenv("IMAGES_URL")
+        return custom_url + frame["CustomImage"].array[0]
+
     set_name = frame["Set"].array[0].lower().replace(" ", "-")
 
     deck_name = (
