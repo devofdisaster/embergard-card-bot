@@ -22,14 +22,16 @@ class Library:
         extracted = process.extract(
             lowercase_query, card_names, scorer=fuzz.partial_ratio, limit=10
         )
-        exact_match_names = [
-            match[0] for match in extracted if match[0].lower() == lowercase_query
+        exactish_match_names = [
+            match[0] for match in extracted if lowercase_query in match[0].lower()
         ]
         best_match_names = [match[0] for match in extracted if match[1] >= 80]
 
         return self._card_memory[
             self._card_memory["Name"].isin(
-                exact_match_names if 1 == len(exact_match_names) else best_match_names
+                exactish_match_names
+                if 1 == len(exactish_match_names)
+                else best_match_names
             )
         ].drop_duplicates(subset="Name")
 
@@ -42,14 +44,16 @@ class Library:
         extracted = process.extract(
             lowercase_query, warband_names, scorer=fuzz.partial_ratio, limit=10
         )
-        exact_match_names = [
-            match[0] for match in extracted if match[0].lower() == lowercase_query
+        exactish_match_names = [
+            match[0] for match in extracted if lowercase_query in match[0].lower()
         ]
         best_match_names = [match[0] for match in extracted if match[1] >= 80]
 
         return self._warband_memory[
             self._warband_memory["Name"].isin(
-                exact_match_names if 1 == len(exact_match_names) else best_match_names
+                exactish_match_names
+                if 1 == len(exactish_match_names)
+                else best_match_names
             )
         ]
 
