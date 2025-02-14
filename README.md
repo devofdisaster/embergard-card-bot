@@ -1,6 +1,11 @@
 # WHU Embergard Card Bot
 
-This is a Discord bot which allows users to quickly load up a preview of Warhammer Underworlds: Embergard cards. 
+This is a Discord bot which allows users to quickly load up a preview of Warhammer Underworlds: Embergard cards.
+
+## Versions
+
+- The https://github.com/devofdisaster/embergard-card-bot/tree/main branch supports the latest edition of the Warhammer Underworlds game (Embergard at time of writing).
+- The https://github.com/devofdisaster/embergard-card-bot/tree/v1plus branch supports the first edition of the game, including the `v1+` community project, which contains various card rebalances and custom warbands.
 
 ## Shout-outs
 
@@ -17,12 +22,13 @@ Requires Python 3.9
     ```bash
     cd embergard-card-bot
     ```
-3. Install the required dependencies:
+3. (Optionally) switch to the `release/v1plus` branch if you want to use the `v1+` version.
+4. Install the required dependencies:
     ```bash
     make install
     ```
-4. Create a developer Discord account and set up the application you'll be using for the bot
-5. Copy the `.env.dist` file as `.env` and fill in:
+5. Create a developer Discord account and set up the application you'll be using for the bot
+6. Copy the `.env.dist` file as `.env` and fill in:
 
     1. `CLIENT_TOKEN` variable with the token for the chosen application
     2. `IMAGES_URL` variable with the base URL to custom images (like for plot cards)
@@ -65,9 +71,17 @@ Additionally, some content has been added to the card descriptions, which needs 
 - core ability icons (`:core:`)
 - surge ability icons (`:surge:`)
 
+#### v1+
+
+The bot uses card data taken directly from [UnderworldsDB](https://underworldsdb.com), trimmed of the unnecessary data, with custom `v1+` changes added in.
+
+Every time an update is made, the [local card library](src/resources/library.csv) has to be updated with the new data.
+
+The fighter data in [warbands.csv](src/resources/warbands.csv) has to be updated manually, as UnderworldsDB doesn't use such a data sheet.
+
 ### Custom images
 
-In some cases (like plot cards) you might want to provide custom images for cards, either because you want to bypass UnderworldsDB or because the particular image is not available there. 
+In some cases (like plot cards, or the `v1+` project) you might want to provide custom images for cards, either because you want to bypass UnderworldsDB or because the particular image is not available there. 
 
 To do so, fill in the `IMAGES_URL` environment variable in your `.env` file, as well as the `CustomImage` column in the [library.csv](src/resources/warbands.csv) file.
 
