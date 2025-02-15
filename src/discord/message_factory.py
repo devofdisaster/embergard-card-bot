@@ -46,14 +46,6 @@ def generate_multi_embed(card_frame: DataFrame, warband_frame: DataFrame) -> Emb
     return embed
 
 
-def generate_warscroll_embed(frame: DataFrame) -> Embed:
-    embed = Embed(
-        title=frame["Name"].array[0],
-    ).set_image(url=_warband_image_link(frame))
-
-    return embed
-
-
 def generate_warband_embed(frame: DataFrame) -> Embed:
     warscroll = frame[frame["WarscrollType"].notnull()]
     fighter_names = frame[frame["WarscrollType"].isnull()]["Name"].tolist()
@@ -72,38 +64,6 @@ def generate_warband_embed(frame: DataFrame) -> Embed:
     return embed
 
 
-def generate_alliance_warband_embeds(frame: DataFrame) -> Embed:
-    warscrolls = frame[frame["WarscrollType"].notnull()]
-    first_scroll = warscrolls.iloc[[0]]
-    fighters = frame[frame["WarscrollType"].isnull()]
-    fighter_names = fighters["Name"].tolist()
-    fighter_list = Embed(
-        title=fighters["Warband"].array[0],
-        url=warbands_url,
-    ).set_image(url=_warband_image_link(first_scroll))
-    description = f"Choose between:\n- {first_scroll['Name'].array[0]}\n"
-
-    for i in range(0, len(fighter_names), 5):
-        fighter_list.add_field(
-            name="Fighters",
-            value="\n".join(fighter_names[i : i + 5]),
-            inline=True,
-        )
-
-    embeds = [fighter_list]
-
-    for j in range(1, len(warscrolls)):
-        current_scroll = warscrolls.iloc[[j]]
-        embeds.append(
-            Embed(url=warbands_url).set_image(url=_warband_image_link(current_scroll))
-        )
-        description = f"{description}- {current_scroll['Name'].array[0]}\n"
-
-    fighter_list.description = description
-
-    return embeds
-
-
 def generate_fighter_embeds(frame: DataFrame) -> List:
     warband_name = frame["Warband"].array[0]
 
@@ -118,7 +78,12 @@ def generate_fighter_embeds(frame: DataFrame) -> List:
 
 
 def _build_single_description(frame: DataFrame) -> str:
-    return f"{_build_icons(frame)}\n{_replace_description_icons(frame)}"
+    restrictions = ""
+
+    if frame["Restrictions"].notnull().array[0]:
+        restrictions = f"**Restricted**: {frame['Restrictions'].array[0]}\n\n"
+
+    return f"{restrictions}{_build_icons(frame)}\n{_replace_description_icons(frame)}"
 
 
 def _build_icons(frame: DataFrame) -> str:
@@ -133,6 +98,9 @@ def _build_icons(frame: DataFrame) -> str:
     if type_value == "Ploy":
         return _build_ploy_icons(frame)
 
+    if type_value == "Spell":
+        return _build_spell_icons(frame)
+
     if type_value == "Upgrade":
         return _build_upgrade_icons(frame)
 
@@ -144,13 +112,11 @@ def _build_objective_icons(frame: DataFrame) -> str:
     add_surge = "Surge" == frame["ObjType"].array[0]
     obj_string = f"{Icons.OBJECTIVE.value}{Icons.SURGE.value if add_surge else ''}"
     glories_string = (" - " + Icons.GLORY.value * glory) if glory else ""
-    forsaken_string = " - :no_entry:" if frame["Forsaken"].notnull().array[0] else ""
 
-    return obj_string + glories_string + forsaken_string + "\n"
+    return obj_string + glories_string + _build_status_icons(frame=frame) + "\n"
 
 
 def _build_plot_icons(frame: DataFrame) -> str:
-    forsaken_string = " - :no_entry:" if frame["Forsaken"].notnull().array[0] else ""
     plot_card_id = "PLOT_" + frame["Number"].array[0]
     plot_icon = (
         Icons[plot_card_id].value
@@ -158,21 +124,24 @@ def _build_plot_icons(frame: DataFrame) -> str:
         else ":question:"
     )
 
-    return plot_icon + forsaken_string + "\n"
+    return plot_icon + "\n"
 
 
 def _build_ploy_icons(frame: DataFrame) -> str:
-    forsaken_string = " - :no_entry:" if frame["Forsaken"].notnull().array[0] else ""
+    return Icons.PLOY.value + _build_status_icons(frame=frame) + "\n"
 
-    return Icons.PLOY.value + forsaken_string + "\n"
+
+def _build_spell_icons(frame: DataFrame) -> str:
+    return Icons.SPELL.value + _build_status_icons(frame=frame) + "\n"
 
 
 def _build_upgrade_icons(frame: DataFrame) -> str:
-    glory = int(frame["Glory/Cost"].array[0])
+    glory = int(frame["Glory/Cost"].notnull().array[0] or 1)
     glories_string = (" - " + Icons.GLORY.value * glory) if glory else ""
-    forsaken_string = " - :no_entry:" if frame["Forsaken"].notnull().array[0] else ""
 
-    return Icons.UPGRADE.value + glories_string + forsaken_string + "\n"
+    return (
+        Icons.UPGRADE.value + glories_string + _build_status_icons(frame=frame) + "\n"
+    )
 
 
 def _replace_description_icons(frame: DataFrame) -> str:
@@ -184,20 +153,26 @@ def _replace_description_icons(frame: DataFrame) -> str:
     return description
 
 
+def _build_status_icons(frame: DataFrame) -> str:
+    if frame["Rotated"].notnull().array[0]:
+        return " - :no_entry: :arrows_counterclockwise:"
+    if frame["Forsaken"].notnull().array[0]:
+        return " - :no_entry:"
+    if frame["Restricted"].notnull().array[0]:
+        return " - :lock:"
+    return ""
+
+
 def _thumbnail_link(frame: DataFrame) -> str:
     if frame["CustomImage"].notnull().array[0]:
         custom_url = os.getenv("IMAGES_URL")
         return custom_url + frame["CustomImage"].array[0]
 
-    set_name = frame["Set"].array[0].lower().replace(" ", "-")
-
-    deck_name = (
-        frame["Deck"].array[0].lower().replace(" rivals deck", "").replace(" ", "%20")
-    )
+    set_name = frame["Season"].array[0].lower().replace(" ", "%20")
     card_name = frame["Name"].array[0].replace(" ", "-").replace("'", "")
     file_name = f"{card_name}.png"
 
-    return f"{uwdb_url}/cards/{set_name}/{deck_name}/{file_name}"
+    return f"{uwdb_url}/1.0/cards/{set_name}/{file_name}"
 
 
 def _warband_image_link(frame: DataFrame, inspired: bool = False) -> str:
@@ -205,15 +180,11 @@ def _warband_image_link(frame: DataFrame, inspired: bool = False) -> str:
     image_number = frame["ImageNumber"].array[0]
     file_name = f"{warband_name}-{image_number}{'-inspired' if inspired else ''}.png"
 
-    if "alliance" == frame["WarscrollType"].array[0]:
-        warband_name = warband_name.replace("grand-alliance-", "")
-        file_name = f"{warband_name}-0{image_number}.png"
-
-    return f"{uwdb_url}/cards/fighters/{file_name}"
+    return f"{uwdb_url}/1.0/cards/fighters/{file_name}"
 
 
 def _build_footer(frame: DataFrame) -> str:
-    set_name = frame["Set"].array[0]
-    deck_name = frame["Deck"].array[0]
+    set_name = frame["Season"].array[0]
+    deck_name = frame["Set"].array[0]
 
-    return f"Set: {set_name}, Deck: {deck_name}"
+    return f"Season: {set_name}, Set: {deck_name}"
