@@ -11,7 +11,13 @@ This is a Discord bot which allows users to quickly load up a preview of Warhamm
 
 Special thanks to **Mcrat** of [UnderworldsDB](https://underworldsdb.com) for providing the card data and images, as well as all contributors who provide him with the data and card scans ahead of release time.
 
-## Installation
+## Running in a Discord server
+Follow the link when signed in to Discord and choose a server you have management permission for:
+
+- [Embergard version](https://discord.com/oauth2/authorize?client_id=1303401599456116757)
+- [v1+ version](https://discord.com/oauth2/authorize?client_id=1340318599390433300)
+
+## Bot app installation
 
 Requires Python 3.9
 1. Clone the repository:

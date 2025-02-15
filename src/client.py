@@ -6,12 +6,9 @@ import re
 from discord import Client, Intents, Message
 from src.card_library import Library
 from src.discord.message_factory import (
-    generate_alliance_warband_embeds,
     generate_fighter_embeds,
     generate_multi_embed,
     generate_single_embed,
-    generate_warband_embed,
-    generate_warscroll_embed,
 )
 
 
@@ -82,11 +79,11 @@ class EmbergardClient(Client):
             lowercase_query = query.lower().replace("’", "'")
             warband_matches = self._library.search_warbands(lowercase_query)
             card_matches = self._library.search_cards(lowercase_query)
-            exact_card_matches = card_matches[
-                [lowercase_query == value.lower() for value in card_matches["Name"]]
+            exactish_card_matches = card_matches[
+                [lowercase_query in value.lower() for value in card_matches["Name"]]
             ]
-            exact_warband_matches = warband_matches[
-                [lowercase_query == value.lower() for value in warband_matches["Name"]]
+            exactish_warband_matches = warband_matches[
+                [lowercase_query in value.lower() for value in warband_matches["Name"]]
             ]
             warband_count = len(warband_matches)
             card_count = len(card_matches)
@@ -97,47 +94,19 @@ class EmbergardClient(Client):
                 continue
 
             if (0 == warband_count and 1 == card_count) or (
-                1 == len(exact_card_matches)
+                1 == len(exactish_card_matches)
             ):
+                # @todo add displaying fighter list if current card is a warband plot card
+
                 await message.channel.send(embed=generate_single_embed(card_matches))
 
                 continue
 
             if (1 == warband_count and 0 == card_count) or (
-                1 == len(exact_warband_matches)
+                1 == len(exactish_warband_matches)
             ):
-                if warband_matches["WarscrollType"].isnull().array[0]:
-                    await message.channel.send(
-                        embeds=generate_fighter_embeds(warband_matches),
-                    )
-
-                    continue
-
-                if "alliance" == warband_matches["WarscrollType"].array[0]:
-                    await message.channel.send(
-                        embed=generate_warscroll_embed(warband_matches)
-                    )
-
-                    continue
-
-                if "generic" == warband_matches["WarscrollType"].array[0]:
-                    await message.channel.send(
-                        embeds=generate_alliance_warband_embeds(
-                            self._library.get_whole_warband(
-                                warband_matches["Warband"].array[0],
-                                warband_matches["GrandAlliance"].array[0],
-                            )
-                        )
-                    )
-
-                    continue
-
                 await message.channel.send(
-                    embed=generate_warband_embed(
-                        self._library.get_whole_warband(
-                            warband_matches["Warband"].array[0]
-                        )
-                    )
+                    embeds=generate_fighter_embeds(warband_matches),
                 )
 
                 continue
@@ -149,7 +118,7 @@ class EmbergardClient(Client):
     async def send_help_message(self, message: Message) -> None:
         help_text = (
             "- Use **((search_term))** to search for cards or warbands, for example `((ghartok))`\n"
-            "- Use multiple search terms in one message: `((ghartok)) ((fortitude)) ((pandaemonium)) ((alliance death))`\n\n"
+            "- Use multiple search terms in one message: `((ghartok)) ((fortitude)) ((pandaemonium))`\n\n"
             "- Use **((help))** to get this exceedingly helpful message"
         )
         await message.channel.send(help_text)
