@@ -35,6 +35,13 @@ class Library:
             )
         ].drop_duplicates(subset="Name")
 
+    def find_deck_sets(self, frame: DataFrame) -> DataFrame:
+        duplicates = self._card_memory[
+            self._card_memory["Name"] == frame["Name"].array[0]
+        ]
+
+        return duplicates[["Set", "Deck"]]
+
     def search_warbands(self, query: str) -> DataFrame:
         if not isinstance(self._warband_memory, DataFrame):
             self.load()

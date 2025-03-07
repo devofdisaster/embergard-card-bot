@@ -11,13 +11,13 @@ uwdb_url = "https://www.underworldsdb.com"
 warbands_url = f"{uwdb_url}/warbands.php"
 
 
-def generate_single_embed(frame: DataFrame) -> Embed:
+def generate_single_embed(frame: DataFrame, duplicate_sets: DataFrame) -> Embed:
     embed = Embed(
         title=frame["Name"].array[0],
         description=_build_single_description(frame),
     )
     embed.set_thumbnail(url=_thumbnail_link(frame))
-    embed.set_footer(text=_build_footer(frame))
+    embed.set_footer(text=_build_footer(duplicate_sets))
 
     return embed
 
@@ -213,7 +213,12 @@ def _warband_image_link(frame: DataFrame, inspired: bool = False) -> str:
 
 
 def _build_footer(frame: DataFrame) -> str:
-    set_name = frame["Set"].array[0]
-    deck_name = frame["Deck"].array[0]
+    footer = ""
 
-    return f"Set: {set_name}, Deck: {deck_name}"
+    for index, row in frame.iterrows():
+        set_name = row.get("Set")
+        deck_name = row.get("Deck")
+
+        footer += f"\nSet: {set_name}, Deck: {deck_name}"
+
+    return footer

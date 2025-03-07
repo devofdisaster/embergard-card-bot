@@ -99,7 +99,11 @@ class EmbergardClient(Client):
             if (0 == warband_count and 1 == card_count) or (
                 1 == len(exact_card_matches)
             ):
-                await message.channel.send(embed=generate_single_embed(card_matches))
+                await message.channel.send(
+                    embed=generate_single_embed(
+                        card_matches, self._library.find_deck_sets(card_matches)
+                    )
+                )
 
                 continue
 
