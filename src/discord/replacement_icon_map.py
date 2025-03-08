@@ -12,7 +12,7 @@ icon_map = {
     ":dfDodge:": Icons.DEF_DODGE.value,
     ":dfSup:": Icons.DEF_FLANKED.value,
     ":dfSup2:": Icons.DEF_SURROUNDED.value,
+    ":MagFocus:": Icons.SPL_FOCUS.value,
+    ":MagChannel:": Icons.SPL_CHANNEL.value,
     ":Hex:": Icons.RANGE.value,
-    ":core:": Icons.CORE.value,
-    ":surge:": Icons.SURGE.value,
 }
