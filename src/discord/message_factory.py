@@ -117,14 +117,7 @@ def _build_objective_icons(frame: DataFrame) -> str:
 
 
 def _build_plot_icons(frame: DataFrame) -> str:
-    plot_card_id = "PLOT_" + frame["Number"].array[0]
-    plot_icon = (
-        Icons[plot_card_id].value
-        if isinstance(Icons[plot_card_id], Icons)
-        else ":question:"
-    )
-
-    return plot_icon + "\n"
+    return "\n"
 
 
 def _build_ploy_icons(frame: DataFrame) -> str:
