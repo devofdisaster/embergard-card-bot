@@ -52,11 +52,11 @@ def generate_warband_embed(frame: DataFrame) -> Embed:
 
     embed = Embed(
         title=frame["Warband"].array[0],
-        description=(None if 0 == len(plot) else _replace_description_icons(plot)),
     )
 
     if 1 == len(plot):
         embed.set_thumbnail(url=_thumbnail_link(plot))
+        embed.description = None if 0 == len(plot) else _replace_description_icons(plot)
 
     for i in range(0, len(fighter_names), 5):
         embed.add_field(
