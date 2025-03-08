@@ -110,7 +110,7 @@ def _build_icons(frame: DataFrame) -> str:
 def _build_objective_icons(frame: DataFrame) -> str:
     glory = int(frame["Glory/Cost"].array[0])
     add_surge = "Surge" == frame["ObjType"].array[0]
-    obj_string = f"{Icons.OBJECTIVE.value}{Icons.SURGE.value if add_surge else ''}"
+    obj_string = f"{Icons.OBJECTIVE.value}{ 'Surge' if add_surge else ''}"
     glories_string = (" - " + Icons.GLORY.value * glory) if glory else ""
 
     return obj_string + glories_string + _build_status_icons(frame=frame) + "\n"
