@@ -9,6 +9,7 @@ from src.discord.message_factory import (
     generate_fighter_embeds,
     generate_multi_embed,
     generate_single_embed,
+    generate_warband_embed,
 )
 
 
@@ -105,8 +106,19 @@ class EmbergardClient(Client):
             if (1 == warband_count and 0 == card_count) or (
                 1 == len(exact_warband_matches)
             ):
+                if warband_matches["WarbandType"].isnull().array[0]:
+                    await message.channel.send(
+                        embeds=generate_fighter_embeds(warband_matches),
+                    )
+
+                    continue
+
                 await message.channel.send(
-                    embeds=generate_fighter_embeds(warband_matches),
+                    embed=generate_warband_embed(
+                        self._library.get_whole_warband(
+                            warband_matches["Warband"].array[0]
+                        )
+                    )
                 )
 
                 continue

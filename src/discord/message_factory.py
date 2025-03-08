@@ -47,12 +47,16 @@ def generate_multi_embed(card_frame: DataFrame, warband_frame: DataFrame) -> Emb
 
 
 def generate_warband_embed(frame: DataFrame) -> Embed:
-    warscroll = frame[frame["WarscrollType"].notnull()]
-    fighter_names = frame[frame["WarscrollType"].isnull()]["Name"].tolist()
+    plot = frame[frame["WarbandType"] == "Plot"]
+    fighter_names = frame[frame["WarbandType"].isnull()]["Name"].tolist()
 
     embed = Embed(
-        title=warscroll["Name"].array[0],
-    ).set_image(url=_warband_image_link(warscroll))
+        title=frame["Warband"].array[0],
+    )
+
+    if 1 == len(plot):
+        embed.set_thumbnail(url=_thumbnail_link(plot))
+        embed.description = None if 0 == len(plot) else _replace_description_icons(plot)
 
     for i in range(0, len(fighter_names), 5):
         embed.add_field(

@@ -1,272 +1,331 @@
-Warband,Name,ImageNumber,GrandAlliance
-Garrek's Reavers,Garrek Gorebeard,1,Chaos
-Garrek's Reavers,Blooded Saek,2,Chaos
-Garrek's Reavers,Karsus the Chained,3,Chaos
-Garrek's Reavers,Targor,4,Chaos
-Garrek's Reavers,Arnulf,5,Chaos
-Steelheart's Champions,Severin Steelheart,1,Order
-Steelheart's Champions,Obryn the Bold,2,Order
-Steelheart's Champions,Angharad Brightshield,3,Order
-Sepulchral Guard,The Sepulchral Warden,1,Death
-Sepulchral Guard,The Champion,2,Death
-Sepulchral Guard,The Harvester,3,Death
-Sepulchral Guard,The Prince of Dust,4,Death
-Sepulchral Guard,Inevitable Petitioner,5,Death
-Sepulchral Guard,Zealous Petitioner,6,Death
-Sepulchral Guard,Rising Petitioner,7,Death
-Ironskulls Boyz,Gurzag Ironskull,1,Destruction
-Ironskulls Boyz,Bonekutta,2,Destruction
-Ironskulls Boyz,Hakka,3,Destruction
-Ironskulls Boyz,Basha,4,Destruction
-The Chosen Axes,Fjul-Grimnir,1,Order
-The Chosen Axes,Tefk Flamebearer,2,Order
-The Chosen Axes,Vol Orrukbane,3,Order
-The Chosen Axes,Mad Maegrim,4,Order
-Spiteclaw's Swarm,Skritch Spiteclaw,1,Chaos
-Spiteclaw's Swarm,Krrk the Almost-trusted,2,Chaos
-Spiteclaw's Swarm,The Lurking Skaven,3,Chaos
-Spiteclaw's Swarm,The Festering Skaven,4,Chaos
-Spiteclaw's Swarm,The Hungering Skaven,5,Chaos
-Magore's Fiends,Magore Redhand,1,Chaos
-Magore's Fiends,Riptooth,2,Chaos
-Magore's Fiends,Zharkus the Bloodsighted,3,Chaos
-Magore's Fiends,Ghartok Flayskull,4,Chaos
-The Farstriders,Sanson Farstrider,1,Order
-The Farstriders,Almeric Eagle-eye,2,Order
-The Farstriders,Elias Swiftblade,3,Order
-Stormsire's Cursebreakers,Averon Stormsire,1,Order
-Stormsire's Cursebreakers,Ammis Dawnguard,2,Order
-Stormsire's Cursebreakers,Rastus the Charmed,3,Order
-Thorns of the Briar Queen,The Briar Queen,1,Death
-Thorns of the Briar Queen,Varclawv the Cruel,2,Death
-Thorns of the Briar Queen,The Ever-hanged,3,Death
-Thorns of the Briar Queen,The Ironwretch,4,Death
-Thorns of the Briar Queen,The Exhumed,5,Death
-Thorns of the Briar Queen,The Silenced,6,Death
-Thorns of the Briar Queen,The Uncrowned,7,Death
-Eyes of the Nine,Vortemis the All-seeing,1,Chaos
-Eyes of the Nine,K'charik,2,Chaos
-Eyes of the Nine,Narvia,3,Chaos
-Eyes of the Nine,Turosh,4,Chaos
-Eyes of the Nine,Blue Horror / Brimstone Horrors,5,Chaos
-Zarbag's Gitz,Zarbag,1,Destruction
-Zarbag's Gitz,Snirk Sourtongue,2,Destruction
-Zarbag's Gitz,Drizgit da Squig Herder,3,Destruction
-Zarbag's Gitz,Bonekrakka,4,Destruction
-Zarbag's Gitz,Gobbaluk,5,Destruction
-Zarbag's Gitz,Prog da Netter,6,Destruction
-Zarbag's Gitz,Stikkit,7,Destruction
-Zarbag's Gitz,Redkap,8,Destruction
-Zarbag's Gitz,Dibbz,9,Destruction
-Godsworn Hunt,Theddra Skull-scryer,1,Chaos
-Godsworn Hunt,Grundann Blood-Eye,2,Chaos
-Godsworn Hunt,Shond Head-Claimer,3,Chaos
-Godsworn Hunt,Jagathra,4,Chaos
-Godsworn Hunt,Ollo,5,Chaos
-Godsworn Hunt,Grawl,6,Chaos
-Mollog's Mob,Mollog the Mighty,1,Destruction
-Mollog's Mob,Bat Squig,2,Destruction
-Mollog's Mob,Stalagsquig,3,Destruction
-Mollog's Mob,Spiteshroom,4,Destruction
-Thundrik's Profiteers,Bjorgen Thundrik,1,Order
-Thundrik's Profiteers,Khazgan Drakkskewer,2,Order
-Thundrik's Profiteers,Dead-Eye Lund,3,Order
-Thundrik's Profiteers,Enrik Ironhail,4,Order
-Thundrik's Profiteers,Garodd Alensen,5,Order
-Ylthari's Guardians,Ylthari,1,Order
-Ylthari's Guardians,Gallanghann of the Glade,2,Order
-Ylthari's Guardians,"Ahnslaine, Revenant Archer",3,Order
-Ylthari's Guardians,Skhathael,4,Order
-Ironsoul's Condemnors,Gwynne Ironsoul,1,Order
-Ironsoul's Condemnors,Brodus Blightbane,2,Order
-Ironsoul's Condemnors,Tavian of Sarnassus,3,Order
-Lady Harrow's Mournflight,Lady Harrow,1,Death
-Lady Harrow's Mournflight,The Anguished One,2,Death
-Lady Harrow's Mournflight,The Screaming Maiden,3,Death
-Lady Harrow's Mournflight,Widow Caitha,4,Death
-Grashrak's Despoilers,Grashrak Fellhoof,1,Chaos
-Grashrak's Despoilers,Draknar,2,Chaos
-Grashrak's Despoilers,Murgoth Half-horn,3,Chaos
-Grashrak's Despoilers,Ushkor,4,Chaos
-Grashrak's Despoilers,Gnarl,5,Chaos
-Grashrak's Despoilers,Korsh 'the Sneak',6,Chaos
-Skaeth's Wild Hunt,Skaeth the Huntsmak,1,Order
-Skaeth's Wild Hunt,"Karthaen, Huntcaller",2,Order
-Skaeth's Wild Hunt,"Sheoch, Kurnothi Tracker",3,Order
-Skaeth's Wild Hunt,"Althaen, Kurnothi Tracker",4,Order
-Skaeth's Wild Hunt,"Lighaen, Malkyn",5,Order
-The Grymwatch,Duke Crackmarrow,1,Death
-The Grymwatch,"Gristlewel, Greatsword",2,Death
-The Grymwatch,Valreek the Tracker,3,Death
-The Grymwatch,Royal Butcher,4,Death
-The Grymwatch,Master Talon,5,Death
-The Grymwatch,Night's Herald,6,Death
-The Grymwatch,Duke's Harriers,7,Death
-Rippa's Snarlfangs,Rippa Narkbad,1,Destruction
-Rippa's Snarlfangs,Stabbit,2,Destruction
-Rippa's Snarlfangs,Mean-eye,3,Destruction
-The Wurmspat,Fecula Flyblown,1,Chaos
-The Wurmspat,Ghulgoch the Butcher,2,Chaos
-The Wurmspat,"Sepsimus, Plaguesworn",3,Chaos
-Hrothgorn's Mantrappers,Hrothgorn Mantrapper,1,Destruction
-Hrothgorn's Mantrappers,Thrafnir,2,Destruction
-Hrothgorn's Mantrappers,Luggit and Thwak,3,Destruction
-Hrothgorn's Mantrappers,Quiv,4,Destruction
-Hrothgorn's Mantrappers,Bushwakka,5,Destruction
-Morgwaeth's Bladecoven,Morgwaeth the Bloodied,1,Order
-Morgwaeth's Bladecoven,Kyrae,2,Order
-Morgwaeth's Bladecoven,Khamyss,3,Order
-Morgwaeth's Bladecoven,Kyrssa,4,Order
-Morgwaeth's Bladecoven,Lethyr,5,Order
-Morgok's Krushas,Morgok,1,Destruction
-Morgok's Krushas,'Ardskull,2,Destruction
-Morgok's Krushas,Thugg,3,Destruction
-Myari's Purifiers,Myari Lightcaller,1,Order
-Myari's Purifiers,Bahannar,2,Order
-Myari's Purifiers,"Ailenn, the Mind's Edge",3,Order
-Myari's Purifiers,Senaela,4,Order
-The Dread Pageant,Vasillac the Gifted,1,Chaos
-The Dread Pageant,Slakeslash,2,Chaos
-The Dread Pageant,Hadzu,3,Chaos
-The Dread Pageant,Glisette,4,Chaos
-Khagra's Ravagers,Khagra the Usurper,1,Chaos
-Khagra's Ravagers,Zarsha Bittersoul,2,Chaos
-Khagra's Ravagers,Razek Godblessed,3,Chaos
-Khagra's Ravagers,Dour Cragan,4,Chaos
-The Starblood Stalkers,"Kixi-Taka, the Diviner",1,Order
-The Starblood Stalkers,Klaq-Troq,2,Order
-The Starblood Stalkers,Otapatl,3,Order
-The Starblood Stalkers,Huachi,4,Order
-The Starblood Stalkers,Tok,5,Order
-The Starblood Stalkers,Xepic,6,Order
-The Crimson Court,Prince Duvalle,1,Death
-The Crimson Court,Gorath the Enforcer,2,Death
-The Crimson Court,Vellas von Faine,3,Death
-The Crimson Court,Ennias Curse-born,4,Death
-Hedkrakka's Madmob,"Hedkrakka, Gob of Gork",1,Destruction
-Hedkrakka's Madmob,Wollop da Skul,2,Destruction
-Hedkrakka's Madmob,Toofdagga,3,Destruction
-Hedkrakka's Madmob,Dakko Sharp-Stikka,4,Destruction
-Kainans Reapers,Mir Kainan,1,Death
-Kainans Reapers,Binar Khenta,2,Death
-Kainans Reapers,Karu,3,Death
-Kainans Reapers,Senha,4,Death
-Kainans Reapers,Hakor,5,Death
-Kainans Reapers,Nohem,6,Death
-Elathain's Soulraid,Elathain Ill-fated,1,Order
-Elathain's Soulraid,Fuirann,2,Order
-Elathain's Soulraid,Tamael,3,Order
-Elathain's Soulraid,Duinclaw,4,Order
-Elathain's Soulraid,Spinefin,5,Order
-Storm of Celestus,Drakan Celestus,1,Order
-Storm of Celestus,Aphus The Brave,2,Order
-Storm of Celestus,Mellisan Star-sighted,3,Order
-Storm of Celestus,Sleek,4,Order
-Drepur's Wraithcreepers,Viceroy Drepur,1,Death
-Drepur's Wraithcreepers,The Patrician,2,Death
-Drepur's Wraithcreepers,Sire Haqfel,3,Death
-Drepur's Wraithcreepers,Grodrig the Lance,4,Death
-Xandire's Truthseekers,Calthia Xandire,1,Order
-Xandire's Truthseekers,Dhoraz Giant-fell,2,Order
-Xandire's Truthseekers,Luxa Stormrider,3,Order
-Xandire's Truthseekers,Taros,4,Order
-Da Kunnin' Krew,Mannok da Kunnin',1,Destruction
-Da Kunnin' Krew,Torka Tuffskul,2,Destruction
-Da Kunnin' Krew,Krookgrin,3,Destruction
-Da Kunnin' Krew,Shank,4,Destruction
-Da Kunnin' Krew,Gikkit,5,Destruction
-Blackpowder's Buccaneers,Gorlok Blackpowder,1,Destruction
-Blackpowder's Buccaneers,Kagey,2,Destruction
-Blackpowder's Buccaneers,Peggz,3,Destruction
-Blackpowder's Buccaneers,Mange,4,Destruction
-Blackpowder's Buccaneers,Shreek,5,Destruction
-The Exiled Dead,Deintalos the Exile,1,Death
-The Exiled Dead,Prentice Marcov,2,Death
-The Exiled Dead,Regulus,3,Death
-The Exiled Dead,Coyl,4,Death
-The Exiled Dead,Bault,5,Death
-The Exiled Dead,Vlash,6,Death
-The Exiled Dead,Ione,7,Death
-Skittershank's Clawpack,Slynk Skittershank,1,Chaos
-Skittershank's Clawpack,Snyp Padpaw,2,Chaos
-Skittershank's Clawpack,Kreep Kinwhisper,3,Chaos
-Skittershank's Clawpack,Krowch't,4,Chaos
-Skittershank's Clawpack,Skulck,5,Chaos
-The Shadeborn,Slythael Shadestalker,1,Order
-The Shadeborn,Drusylla Vyserax,2,Order
-The Shadeborn,Sylarc Greyblood,3,Order
-The Shadeborn,Valyssa Umbrael,4,Order
-Hexbane's Hunters,Haskel Hexbane,1,Order
-Hexbane's Hunters,Aemos Duncarrow,2,Order
-Hexbane's Hunters,Quiet Pock,3,Order
-Hexbane's Hunters,Brydget Axwold,4,Order
-Hexbane's Hunters,Grotbiter,5,Order
-Hexbane's Hunters,Ratspike,6,Order
-Gorechosen of Dromm,"Dromm, Wounder of Worlds",1,Chaos
-Gorechosen of Dromm,The Gorehulk,2,Chaos
-Gorechosen of Dromm,Skullgrinder Herax,3,Chaos
-Gnarlspirit Pack,Sarrakkar Blackwing,1,Chaos
-Gnarlspirit Pack,Gorl Spinehammer,2,Chaos
-Gnarlspirit Pack,Crimson Kheira,3,Chaos
-Gnarlspirit Pack,Lupan Longcut,4,Chaos
-Sons of Velmorn,King Morlak Velmorn,1,Death
-Sons of Velmorn,Sir Jerdran Falseborn,2,Death
-Sons of Velmorn,"Thain, Fourth-and-Last",3,Death
-Sons of Velmorn,Helmar the Hewer,4,Death
-Sons of Velmorn,Marshal Faulk Velmorn,5,Death
-Grinkrak's Looncourt,Grinkrak the Great,1,Destruction
-Grinkrak's Looncourt,"Grib, da Wonky Lance",2,Destruction
-Grinkrak's Looncourt,Pokin' Snark,3,Destruction
-Grinkrak's Looncourt,Snorbo da Spore,4,Destruction
-Grinkrak's Looncourt,Skolko and Pronk,5,Destruction
-Grinkrak's Looncourt,Moonface Nagz,6,Destruction
-Grinkrak's Looncourt,Pointy Burk,7,Destruction
-Gryselle's Arenai,"Gryselle, the Slaughterer",1,Order
-Gryselle's Arenai,"Thrialla, the Lash",2,Order
-Gryselle's Arenai,"Retaria, the Entangler",3,Order
-Gryselle's Arenai,"Kalexis, the Silvered Blur",4,Order
-Gryselle's Arenai,"Traxya, the Aegis",5,Order
-Domitan's Stormcoven,"Domitan, Eye of the Storm",1,Order
-Domitan's Stormcoven,Leona Stratosi,2,Order
-Domitan's Stormcoven,"Sarpon, the Cyclone",3,Order
-Ephilim's Pandaemonium,Ephilim the Unknowable,1,Chaos
-Ephilim's Pandaemonium,Spawnmaw,2,Chaos
-Ephilim's Pandaemonium,Flamespooler,3,Chaos
-Ephilim's Pandaemonium,Kindlefinger,4,Chaos
-Ephilim's Pandaemonium,"Apo'trax, the Starefysh",5,Chaos
-The Headsmen's Curse,Wielder of the Blade,1,Death
-The Headsmen's Curse,Bearer of the Block,2,Death
-The Headsmen's Curse,Scriptor of the Sentence,3,Death
-The Headsmen's Curse,Sharpener of the Blade,4,Death
-Skabbik's Plaguepack,Skabbik Plagueseeker,1,Chaos
-Skabbik's Plaguepack,Rabidius Skench,2,Chaos
-Skabbik's Plaguepack,Itchitt,3,Chaos
-Skabbik's Plaguepack,Poxlix,4,Chaos
-Skabbik's Plaguepack,Rikkit,5,Chaos
-Skabbik's Plaguepack,Skritter,6,Chaos
-Cyreni's Razors,Cyreni of the Abyss,1,Order
-Cyreni's Razors,Alathyrr,2,Order
-Cyreni's Razors,Renglaith,3,Order
-Cyreni's Razors,Cephanyr,4,Order
-The Thricefold Discord,Vexmor the Excessively Indolent,1,Chaos
-The Thricefold Discord,Vashtiss the Coiled,2,Chaos
-The Thricefold Discord,"Lascivyr, the Bladed Blessing",3,Chaos
-Daggok's Stabladz,Daggok Finksteala,1,Destruction
-Daggok's Stabladz,Hurrk da Howla,2,Destruction
-Daggok's Stabladz,Jagz da Bleeda,3,Destruction
-Daggok's Stabladz,Grakk da Hook,4,Destruction
-Zondara's Gravebreakers,Zondara Rivenheart,1,Death
-Zondara's Gravebreakers,Lost Ferlain,2,Death
-Zondara's Gravebreakers,Pikk,3,Death
-Zondara's Gravebreakers,Cracktomb,4,Death
-Zondara's Gravebreakers,Toyle,5,Death
-Brethren of the Bolt,Pater Filius,1,Order
-Brethren of the Bolt,Friar Galvic,2,Order
-Brethren of the Bolt,Soror Tazat,3,Order
-Brethren of the Bolt,Acolyte Arcus,4,Order
-Brethren of the Bolt,Scorched Yakob,5,Order
-The Skinnerkin,Gristla Tenderhooke,1,Death
-The Skinnerkin,Young Master Kretch,2,Death
-The Skinnerkin,Flensemaster Pewdrig,3,Death
-The Skinnerkin,Seddrik the Chain,4,Death
-The Skinnerkin,The Carnskyr,5,Death
+Warband,Name,ImageNumber,GrandAlliance,WarbandType,CustomImage,Description
+Garrek's Reavers,Garrek's Reavers,0,Chaos,Warband,,
+Garrek's Reavers,Garrek Gorebeard,1,Chaos,,,
+Garrek's Reavers,Blooded Saek,2,Chaos,,,
+Garrek's Reavers,Karsus the Chained,3,Chaos,,,
+Garrek's Reavers,Targor,4,Chaos,,,
+Garrek's Reavers,Arnulf,5,Chaos,,,
+Steelheart's Champions,Steelheart's Champions,0,Order,Warband,,
+Steelheart's Champions,Severin Steelheart,1,Order,,,
+Steelheart's Champions,Obryn the Bold,2,Order,,,
+Steelheart's Champions,Angharad Brightshield,3,Order,,,
+Sepulchral Guard,Sepulchral Guard,0,Death,Warband,,
+Sepulchral Guard,The Sepulchral Warden,1,Death,,,
+Sepulchral Guard,The Champion,2,Death,,,
+Sepulchral Guard,The Harvester,3,Death,,,
+Sepulchral Guard,The Prince of Dust,4,Death,,,
+Sepulchral Guard,Inevitable Petitioner,5,Death,,,
+Sepulchral Guard,Zealous Petitioner,6,Death,,,
+Sepulchral Guard,Rising Petitioner,7,Death,,,
+Ironskulls Boyz,Ironskulls Boyz,0,Destruction,Warband,,
+Ironskulls Boyz,Gurzag Ironskull,1,Destruction,,,
+Ironskulls Boyz,Bonekutta,2,Destruction,,,
+Ironskulls Boyz,Hakka,3,Destruction,,,
+Ironskulls Boyz,Basha,4,Destruction,,,
+The Chosen Axes,The Chosen Axes,0,Order,Warband,,
+The Chosen Axes,Fjul-Grimnir,1,Order,,,
+The Chosen Axes,Tefk Flamebearer,2,Order,,,
+The Chosen Axes,Vol Orrukbane,3,Order,,,
+The Chosen Axes,Mad Maegrim,4,Order,,,
+Spiteclaw's Swarm,Spiteclaw's Swarm,0,Chaos,Warband,,
+Spiteclaw's Swarm,Skritch Spiteclaw,1,Chaos,,,
+Spiteclaw's Swarm,Krrk the Almost-trusted,2,Chaos,,,
+Spiteclaw's Swarm,The Lurking Skaven,3,Chaos,,,
+Spiteclaw's Swarm,The Festering Skaven,4,Chaos,,,
+Spiteclaw's Swarm,The Hungering Skaven,5,Chaos,,,
+Magore's Fiends,Magore's Fiends,0,Chaos,Warband,,
+Magore's Fiends,Magore Redhand,1,Chaos,,,
+Magore's Fiends,Riptooth,2,Chaos,,,
+Magore's Fiends,Zharkus the Bloodsighted,3,Chaos,,,
+Magore's Fiends,Ghartok Flayskull,4,Chaos,,,
+The Farstriders,The Farstriders,0,Order,Warband,,
+The Farstriders,Sanson Farstrider,1,Order,,,
+The Farstriders,Almeric Eagle-eye,2,Order,,,
+The Farstriders,Elias Swiftblade,3,Order,,,
+Stormsire's Cursebreakers,Stormsire's Cursebreakers,0,Order,Warband,,
+Stormsire's Cursebreakers,Averon Stormsire,1,Order,,,
+Stormsire's Cursebreakers,Ammis Dawnguard,2,Order,,,
+Stormsire's Cursebreakers,Rastus the Charmed,3,Order,,,
+Thorns of the Briar Queen,Thorns of the Briar Queen,0,Death,Warband,,
+Thorns of the Briar Queen,The Briar Queen,1,Death,,,
+Thorns of the Briar Queen,Varclawv the Cruel,2,Death,,,
+Thorns of the Briar Queen,The Ever-hanged,3,Death,,,
+Thorns of the Briar Queen,The Ironwretch,4,Death,,,
+Thorns of the Briar Queen,The Exhumed,5,Death,,,
+Thorns of the Briar Queen,The Silenced,6,Death,,,
+Thorns of the Briar Queen,The Uncrowned,7,Death,,,
+Eyes of the Nine,Eyes of the Nine,0,Chaos,Warband,,
+Eyes of the Nine,Vortemis the All-seeing,1,Chaos,,,
+Eyes of the Nine,K'charik,2,Chaos,,,
+Eyes of the Nine,Narvia,3,Chaos,,,
+Eyes of the Nine,Turosh,4,Chaos,,,
+Eyes of the Nine,Blue Horror / Brimstone Horrors,5,Chaos,,,
+Zarbag's Gitz,Zarbag's Gitz,0,Destruction,Warband,,
+Zarbag's Gitz,Zarbag,1,Destruction,,,
+Zarbag's Gitz,Snirk Sourtongue,2,Destruction,,,
+Zarbag's Gitz,Drizgit da Squig Herder,3,Destruction,,,
+Zarbag's Gitz,Bonekrakka,4,Destruction,,,
+Zarbag's Gitz,Gobbaluk,5,Destruction,,,
+Zarbag's Gitz,Prog da Netter,6,Destruction,,,
+Zarbag's Gitz,Stikkit,7,Destruction,,,
+Zarbag's Gitz,Redkap,8,Destruction,,,
+Zarbag's Gitz,Dibbz,9,Destruction,,,
+Godsworn Hunt,Godsworn Hunt,0,Chaos,Warband,,
+Godsworn Hunt,Theddra Skull-scryer,1,Chaos,,,
+Godsworn Hunt,Grundann Blood-Eye,2,Chaos,,,
+Godsworn Hunt,Shond Head-Claimer,3,Chaos,,,
+Godsworn Hunt,Jagathra,4,Chaos,,,
+Godsworn Hunt,Ollo,5,Chaos,,,
+Godsworn Hunt,Grawl,6,Chaos,,,
+Mollog's Mob,Mollog's Mob,0,Destruction,Warband,,
+Mollog's Mob,Mollog the Mighty,1,Destruction,,,
+Mollog's Mob,Bat Squig,2,Destruction,,,
+Mollog's Mob,Stalagsquig,3,Destruction,,,
+Mollog's Mob,Spiteshroom,4,Destruction,,,
+Thundrik's Profiteers,Thundrik's Profiteers,0,Order,Warband,,
+Thundrik's Profiteers,Bjorgen Thundrik,1,Order,,,
+Thundrik's Profiteers,Khazgan Drakkskewer,2,Order,,,
+Thundrik's Profiteers,Dead-Eye Lund,3,Order,,,
+Thundrik's Profiteers,Enrik Ironhail,4,Order,,,
+Thundrik's Profiteers,Garodd Alensen,5,Order,,,
+Ylthari's Guardians,Ylthari's Guardians,0,Order,Warband,,
+Ylthari's Guardians,Ylthari,1,Order,,,
+Ylthari's Guardians,Gallanghann of the Glade,2,Order,,,
+Ylthari's Guardians,"Ahnslaine, Revenant Archer",3,Order,,,
+Ylthari's Guardians,Skhathael,4,Order,,,
+Ironsoul's Condemnors,Ironsoul's Condemnors,0,Order,Warband,,
+Ironsoul's Condemnors,Gwynne Ironsoul,1,Order,,,
+Ironsoul's Condemnors,Brodus Blightbane,2,Order,,,
+Ironsoul's Condemnors,Tavian of Sarnassus,3,Order,,,
+Lady Harrow's Mournflight,Lady Harrow's Mournflight,0,Death,Warband,,
+Lady Harrow's Mournflight,Lady Harrow,1,Death,,,
+Lady Harrow's Mournflight,The Anguished One,2,Death,,,
+Lady Harrow's Mournflight,The Screaming Maiden,3,Death,,,
+Lady Harrow's Mournflight,Widow Caitha,4,Death,,,
+Grashrak's Despoilers,Grashrak's Despoilers,0,Chaos,Warband,,
+Grashrak's Despoilers,Grashrak Fellhoof,1,Chaos,,,
+Grashrak's Despoilers,Draknar,2,Chaos,,,
+Grashrak's Despoilers,Murgoth Half-horn,3,Chaos,,,
+Grashrak's Despoilers,Ushkor,4,Chaos,,,
+Grashrak's Despoilers,Gnarl,5,Chaos,,,
+Grashrak's Despoilers,Korsh 'the Sneak',6,Chaos,,,
+Skaeth's Wild Hunt,Skaeth's Wild Hunt,0,Order,Warband,,
+Skaeth's Wild Hunt,Skaeth the Huntsmak,1,Order,,,
+Skaeth's Wild Hunt,"Karthaen, Huntcaller",2,Order,,,
+Skaeth's Wild Hunt,"Sheoch, Kurnothi Tracker",3,Order,,,
+Skaeth's Wild Hunt,"Althaen, Kurnothi Tracker",4,Order,,,
+Skaeth's Wild Hunt,"Lighaen, Malkyn",5,Order,,,
+The Grymwatch,The Grymwatch,0,Death,Warband,,
+The Grymwatch,Duke Crackmarrow,1,Death,,,
+The Grymwatch,"Gristlewel, Greatsword",2,Death,,,
+The Grymwatch,Valreek the Tracker,3,Death,,,
+The Grymwatch,Royal Butcher,4,Death,,,
+The Grymwatch,Master Talon,5,Death,,,
+The Grymwatch,Night's Herald,6,Death,,,
+The Grymwatch,Duke's Harriers,7,Death,,,
+Rippa's Snarlfangs,Rippa's Snarlfangs,0,Destruction,Warband,,
+Rippa's Snarlfangs,Rippa Narkbad,1,Destruction,,,
+Rippa's Snarlfangs,Stabbit,2,Destruction,,,
+Rippa's Snarlfangs,Mean-eye,3,Destruction,,,
+The Wurmspat,The Wurmspat,0,Chaos,Warband,,
+The Wurmspat,Fecula Flyblown,1,Chaos,,,
+The Wurmspat,Ghulgoch the Butcher,2,Chaos,,,
+The Wurmspat,"Sepsimus, Plaguesworn",3,Chaos,,,
+Hrothgorn's Mantrappers,Hrothgorn's Mantrappers,0,Destruction,Warband,,
+Hrothgorn's Mantrappers,Hrothgorn Mantrapper,1,Destruction,,,
+Hrothgorn's Mantrappers,Thrafnir,2,Destruction,,,
+Hrothgorn's Mantrappers,Luggit and Thwak,3,Destruction,,,
+Hrothgorn's Mantrappers,Quiv,4,Destruction,,,
+Hrothgorn's Mantrappers,Bushwakka,5,Destruction,,,
+Morgwaeth's Bladecoven,Morgwaeth's Bladecoven,0,Order,Warband,,
+Morgwaeth's Bladecoven,Morgwaeth the Bloodied,1,Order,,,
+Morgwaeth's Bladecoven,Kyrae,2,Order,,,
+Morgwaeth's Bladecoven,Khamyss,3,Order,,,
+Morgwaeth's Bladecoven,Kyrssa,4,Order,,,
+Morgwaeth's Bladecoven,Lethyr,5,Order,,,
+Morgok's Krushas,Morgok's Krushas,0,Destruction,Warband,,
+Morgok's Krushas,Morgok,1,Destruction,,,
+Morgok's Krushas,'Ardskull,2,Destruction,,,
+Morgok's Krushas,Thugg,3,Destruction,,,
+Myari's Purifiers,Myari's Purifiers,0,Order,Warband,,
+Myari's Purifiers,Myari Lightcaller,1,Order,,,
+Myari's Purifiers,Bahannar,2,Order,,,
+Myari's Purifiers,"Ailenn, the Mind's Edge",3,Order,,,
+Myari's Purifiers,Senaela,4,Order,,,
+The Dread Pageant,The Dread Pageant,0,Chaos,Warband,,
+The Dread Pageant,Vasillac the Gifted,1,Chaos,,,
+The Dread Pageant,Slakeslash,2,Chaos,,,
+The Dread Pageant,Hadzu,3,Chaos,,,
+The Dread Pageant,Glisette,4,Chaos,,,
+Khagra's Ravagers,Khagra's Ravagers,0,Chaos,Warband,,
+Khagra's Ravagers,Desecration,0,Chaos,Plot,"/khagras-ravagers/desecration.png","When a rule tells you to **desecrate** an objective, **place** one friendly Desecration token on that objective (use a counter to represent a Desecration token).\n\nIf, at the end of a power step, an enemy fighter is in the same hex as an objective that has a Desecration token, **remove** that token.\n\nFighters cannot hold an objective that has a Desecration token.\nYou cannot **desecrate** an objective that has a Desecration token.\nIf a Desecration token is on an objective token that moves, the Desecration token moves with it.\nIf a Desecration token is on an objective token that is flipped, **remove** the Desecration token."
+Khagra's Ravagers,Khagra the Usurper,1,Chaos,,,
+Khagra's Ravagers,Zarsha Bittersoul,2,Chaos,,,
+Khagra's Ravagers,Razek Godblessed,3,Chaos,,,
+Khagra's Ravagers,Dour Cragan,4,Chaos,,,
+The Starblood Stalkers,The Starblood Stalkers,0,Order,Warband,,
+The Starblood Stalkers,"Kixi-Taka, the Diviner",1,Order,,,
+The Starblood Stalkers,Klaq-Troq,2,Order,,,
+The Starblood Stalkers,Otapatl,3,Order,,,
+The Starblood Stalkers,Huachi,4,Order,,,
+The Starblood Stalkers,Tok,5,Order,,,
+The Starblood Stalkers,Xepic,6,Order,,,
+The Crimson Court,The Crimson Court,0,Death,Warband,,
+The Crimson Court,Prince Duvalle,1,Death,,,
+The Crimson Court,Gorath the Enforcer,2,Death,,,
+The Crimson Court,Vellas von Faine,3,Death,,,
+The Crimson Court,Ennias Curse-born,4,Death,,,
+Hedkrakka's Madmob,Hedkrakka's Madmob,0,Death,Warband,,
+Hedkrakka's Madmob,Primacy,0,Destruction,Plot,"/hedkrakkas-madmob/primacy.png","When a player gains or is given the Primacy token, they take the Primacy token and place it with their fighter cards. If another player has the Primacy token when a player gains it, they take the token from that player.\n\nA player gains the Primacy token after an activation:\n\n- in which a friendly fighter's **Attack action** targeted a fighter with no wound counters and took that fighter out of action.\n- in which a friendly fighter's **Attack action** took an enemy **leader** out of action.\n- if their warband holds four or more objectives.\n\nIf a player has the Primacy token at the end of the round, they gain one spent glory point and then discard the Primacy token."
+Hedkrakka's Madmob,"Hedkrakka, Gob of Gork",1,Destruction,,,
+Hedkrakka's Madmob,Wollop da Skul,2,Destruction,,,
+Hedkrakka's Madmob,Toofdagga,3,Destruction,,,
+Hedkrakka's Madmob,Dakko Sharp-Stikka,4,Destruction,,,
+Kainans Reapers,Kainans Reapers,0,Death,Warband,,
+Kainans Reapers,Mir Kainan,1,Death,,,
+Kainans Reapers,Binar Khenta,2,Death,,,
+Kainans Reapers,Karu,3,Death,,,
+Kainans Reapers,Senha,4,Death,,,
+Kainans Reapers,Hakor,5,Death,,,
+Kainans Reapers,Nohem,6,Death,,,
+Elathain's Soulraid,Elathain's Soulraid,0,Order,Warband,,
+Elathain's Soulraid,Elathain Ill-fated,1,Order,,,
+Elathain's Soulraid,Fuirann,2,Order,,,
+Elathain's Soulraid,Tamael,3,Order,,,
+Elathain's Soulraid,Duinclaw,4,Order,,,
+Elathain's Soulraid,Spinefin,5,Order,,,
+Storm of Celestus,Storm of Celestus,0,Order,Warband,,
+Storm of Celestus,Drakan Celestus,1,Order,,,
+Storm of Celestus,Aphus The Brave,2,Order,,,
+Storm of Celestus,Mellisan Star-sighted,3,Order,,,
+Storm of Celestus,Sleek,4,Order,,,
+Drepur's Wraithcreepers,Drepur's Wraithcreepers,0,Death,Warband,,
+Drepur's Wraithcreepers,Viceroy Drepur,1,Death,,,
+Drepur's Wraithcreepers,The Patrician,2,Death,,,
+Drepur's Wraithcreepers,Sire Haqfel,3,Death,,,
+Drepur's Wraithcreepers,Grodrig the Lance,4,Death,,,
+Xandire's Truthseekers,Xandire's Truthseekers,0,Order,Warband,,
+Xandire's Truthseekers,Calthia Xandire,1,Order,,,
+Xandire's Truthseekers,Dhoraz Giant-fell,2,Order,,,
+Xandire's Truthseekers,Luxa Stormrider,3,Order,,,
+Xandire's Truthseekers,Taros,4,Order,,,
+Da Kunnin' Krew,Da Kunnin' Krew,0,Destruction,Warband,,
+Da Kunnin' Krew,Mannok da Kunnin',1,Destruction,,,
+Da Kunnin' Krew,Torka Tuffskul,2,Destruction,,,
+Da Kunnin' Krew,Krookgrin,3,Destruction,,,
+Da Kunnin' Krew,Shank,4,Destruction,,,
+Da Kunnin' Krew,Gikkit,5,Destruction,,,
+Blackpowder's Buccaneers,Blackpowder's Buccaneers,0,Destruction,Warband,,
+Blackpowder's Buccaneers,Gorlok Blackpowder,1,Destruction,,,
+Blackpowder's Buccaneers,Kagey,2,Destruction,,,
+Blackpowder's Buccaneers,Peggz,3,Destruction,,,
+Blackpowder's Buccaneers,Mange,4,Destruction,,,
+Blackpowder's Buccaneers,Shreek,5,Destruction,,,
+The Exiled Dead,The Exiled Dead,0,Death,Warband,,
+The Exiled Dead,Deintalos the Exile,1,Death,,,
+The Exiled Dead,Prentice Marcov,2,Death,,,
+The Exiled Dead,Regulus,3,Death,,,
+The Exiled Dead,Coyl,4,Death,,,
+The Exiled Dead,Bault,5,Death,,,
+The Exiled Dead,Vlash,6,Death,,,
+The Exiled Dead,Ione,7,Death,,,
+Skittershank's Clawpack,Skittershank's Clawpack,0,Chaos,Warband,,
+Skittershank's Clawpack,Slynk Skittershank,1,Chaos,,,
+Skittershank's Clawpack,Snyp Padpaw,2,Chaos,,,
+Skittershank's Clawpack,Kreep Kinwhisper,3,Chaos,,,
+Skittershank's Clawpack,Krowch't,4,Chaos,,,
+Skittershank's Clawpack,Skulck,5,Chaos,,,
+The Shadeborn,The Shadeborn,0,Order,Warband,,
+The Shadeborn,Slythael Shadestalker,1,Order,,,
+The Shadeborn,Drusylla Vyserax,2,Order,,,
+The Shadeborn,Sylarc Greyblood,3,Order,,,
+The Shadeborn,Valyssa Umbrael,4,Order,,,
+Hexbane's Hunters,Hexbane's Hunters,0,Order,Warband,,
+Hexbane's Hunters,Haskel Hexbane,1,Order,,,
+Hexbane's Hunters,Aemos Duncarrow,2,Order,,,
+Hexbane's Hunters,Quiet Pock,3,Order,,,
+Hexbane's Hunters,Brydget Axwold,4,Order,,,
+Hexbane's Hunters,Grotbiter,5,Order,,,
+Hexbane's Hunters,Ratspike,6,Order,,,
+Gorechosen of Dromm,Gorechosen of Dromm,0,Chaos,Warband,,
+Gorechosen of Dromm,"Dromm, Wounder of Worlds",1,Chaos,,,
+Gorechosen of Dromm,The Gorehulk,2,Chaos,,,
+Gorechosen of Dromm,Skullgrinder Herax,3,Chaos,,,
+Gnarlspirit Pack,Gnarlspirit Pack,0,Chaos,Warband,,
+Gnarlspirit Pack,Sarrakkar Blackwing,1,Chaos,,,
+Gnarlspirit Pack,Gorl Spinehammer,2,Chaos,,,
+Gnarlspirit Pack,Crimson Kheira,3,Chaos,,,
+Gnarlspirit Pack,Lupan Longcut,4,Chaos,,,
+Sons of Velmorn,Sons of Velmorn,0,Death,Warband,,
+Sons of Velmorn,King Morlak Velmorn,1,Death,,,
+Sons of Velmorn,Sir Jerdran Falseborn,2,Death,,,
+Sons of Velmorn,"Thain, Fourth-and-Last",3,Death,,,
+Sons of Velmorn,Helmar the Hewer,4,Death,,,
+Sons of Velmorn,Marshal Faulk Velmorn,5,Death,,,
+Grinkrak's Looncourt,Grinkrak's Looncourt,0,Destruction,Warband,,
+Grinkrak's Looncourt,Grinkrak the Great,1,Destruction,,,
+Grinkrak's Looncourt,"Grib, da Wonky Lance",2,Destruction,,,
+Grinkrak's Looncourt,Pokin' Snark,3,Destruction,,,
+Grinkrak's Looncourt,Snorbo da Spore,4,Destruction,,,
+Grinkrak's Looncourt,Skolko and Pronk,5,Destruction,,,
+Grinkrak's Looncourt,Moonface Nagz,6,Destruction,,,
+Grinkrak's Looncourt,Pointy Burk,7,Destruction,,,
+Gryselle's Arenai,Gryselle's Arenai,0,Order,Warband,,
+Gryselle's Arenai,"Gryselle, the Slaughterer",1,Order,,,
+Gryselle's Arenai,"Thrialla, the Lash",2,Order,,,
+Gryselle's Arenai,"Retaria, the Entangler",3,Order,,,
+Gryselle's Arenai,"Kalexis, the Silvered Blur",4,Order,,,
+Gryselle's Arenai,"Traxya, the Aegis",5,Order,,,
+Domitan's Stormcoven,Domitan's Stormcoven,0,Order,Warband,,
+Domitan's Stormcoven,"Domitan, Eye of the Storm",1,Order,,,
+Domitan's Stormcoven,Leona Stratosi,2,Order,,,
+Domitan's Stormcoven,"Sarpon, the Cyclone",3,Order,,,
+Ephilim's Pandaemonium,Ephilim's Pandaemonium,0,Chaos,Plot,"/ephilims-pandaemonium/plot.png","(Errata update) Friendly fighters with the **changer** keyword cannot be given Attack action upgrades.\n\nAt the start of the round (after the roll-off to see who takes the first activation but before the first reaction step), play through the following Change sequence. If two or more players have this plot card, the player that is taking the first activation plays through their Change sequence first, followed by the players to their left and so on. Reactions cannot be made during the Change sequence.\n\n1. **Choose** one friendly **changer**. Inspire the chosen **changer**. You can **choose** an Inspired **changer**.\n2. Pick an opponent. That oponent chooses a surviving **changer** from your warband that has not been chosen this round. **Stagger** the chosen **changer**.\n3. **Choose** one friendly **changer** that has not been chosen this round. **Give** the chosen **changer** one Guard token.\n4. Pick an opponent. That oponent chooses a surviving **changer** from your warband that has not been chosen this round. That opponent **pushes** the chosen **changer** 1 hex.\n\nWhen there are no friendly **changers** that can be chosen, the Change sequence immediately ends."
+Ephilim's Pandaemonium,Ephilim the Unknowable,1,Chaos,,,
+Ephilim's Pandaemonium,Spawnmaw,2,Chaos,,,
+Ephilim's Pandaemonium,Flamespooler,3,Chaos,,,
+Ephilim's Pandaemonium,Kindlefinger,4,Chaos,,,
+Ephilim's Pandaemonium,"Apo'trax, the Starefysh",5,Chaos,,,
+The Headsmen's Curse,The Headsmen's Curse,0,Death,Plot,"/the-headsmens-curse/plot.png","**Awaiting Execution**: If a fighter with a Condemned counter would be given a Condemned counter, that additional Condemned counter is **removed**.\n\n**Justice is Served**: When an enemy fighter with a Condemned counter is taken out of action, gain one Condemned counter.\n\n**Well Executed**: After a friendly fighter's **Attack action** takes an adjacent target out of action, gain one Condemned counter for each of the following that are true:\n\n- That **Attack action** was supported\n- The target was a **Large** fighter."
+The Headsmen's Curse,Wielder of the Blade,1,Death,,,
+The Headsmen's Curse,Bearer of the Block,2,Death,,,
+The Headsmen's Curse,Scriptor of the Sentence,3,Death,,,
+The Headsmen's Curse,Sharpener of the Blade,4,Death,,,
+Skabbik's Plaguepack,Skabbik's Plaguepack,0,Chaos,Plot,"/skabbiks-plaguepack/plot.png","At the end of an action phase, a player's and/or no one's territory are **Corrupted** by your warband if one or more of the following are true:\n\n- Two or more friendly fighters are in that territory.\n- One or more friendly **befoulers** are on an objective in that territory.\n\nWhen a territory becomes **Corrupted**, it remains **Corrupted** until the end of the next action phase (even if this is as a result of a power card).\n\nA territory can be **Corrupted** by multple warbands at the same time."
+Skabbik's Plaguepack,Skabbik Plagueseeker,1,Chaos,,,
+Skabbik's Plaguepack,Rabidius Skench,2,Chaos,,,
+Skabbik's Plaguepack,Itchitt,3,Chaos,,,
+Skabbik's Plaguepack,Poxlix,4,Chaos,,,
+Skabbik's Plaguepack,Rikkit,5,Chaos,,,
+Skabbik's Plaguepack,Skritter,6,Chaos,,,
+Cyreni's Razors,Cyreni's Razors,0,Order,Warband,,
+Cyreni's Razors,Cyreni of the Abyss,1,Order,,,
+Cyreni's Razors,Alathyrr,2,Order,,,
+Cyreni's Razors,Renglaith,3,Order,,,
+Cyreni's Razors,Cephanyr,4,Order,,,
+The Thricefold Discord,The Thricefold Discord,0,Chaos,Warband,,
+The Thricefold Discord,Vexmor the Excessively Indolent,1,Chaos,,,
+The Thricefold Discord,Vashtiss the Coiled,2,Chaos,,,
+The Thricefold Discord,"Lascivyr, the Bladed Blessing",3,Chaos,,,
+Daggok's Stabladz,Daggok's Stabladz,0,Destruction,Plot,"/daggoks-stabladz/plot.png","**Schemes** are gambits with these additional rules:\n\nYou can only play **Schemes** in your power step, and you play them face down. A face-down **Scheme** is not in your hand, has no effect and is not **persisting**.\n\nTurn your face-down **Schemes** face up at the start of your next turn. At this point, the **Scheme's** text explains what effect the **Scheme** has.\n\nEach **Scheme** **persists** until you meet the condition described on the card: when you do so, put the **Scheme** under this card. A **Scheme** under this card has no effect, but some cards count the number of **Schemes** under this card.\n\nAfter your power step, you can return any **persisting** **Schemes** to your hand."
+Daggok's Stabladz,Daggok Finksteala,1,Destruction,,,
+Daggok's Stabladz,Hurrk da Howla,2,Destruction,,,
+Daggok's Stabladz,Jagz da Bleeda,3,Destruction,,,
+Daggok's Stabladz,Grakk da Hook,4,Destruction,,,
+Zondara's Gravebreakers,Zondara's Gravebreakers,0,Death,Warband,,
+Zondara's Gravebreakers,Zondara Rivenheart,1,Death,,,
+Zondara's Gravebreakers,Lost Ferlain,2,Death,,,
+Zondara's Gravebreakers,Pikk,3,Death,,,
+Zondara's Gravebreakers,Cracktomb,4,Death,,,
+Zondara's Gravebreakers,Toyle,5,Death,,,
+Brethren of the Bolt,Brethren of the Bolt,0,Order,Plot,"/brethren-of-the-bolt/plot.png","**Crackling with Faith**\nEach friendly fighter from this warband begins the game Inspired.\n\n**Holy Vessels**\nDuring a friendly fighter's **Attack action** on their fighter card, other than **Scything Attack actions**, when first determining the distance between the attacker and the target (by the shortest route), subtract 1 from the total distance for each hex counted that contains a friendly fighter. After that **Attack action** is resolved, Inspire each friendly fighter in a hex counted in this way."
+Brethren of the Bolt,Pater Filius,1,Order,,,
+Brethren of the Bolt,Friar Galvic,2,Order,,,
+Brethren of the Bolt,Soror Tazat,3,Order,,,
+Brethren of the Bolt,Acolyte Arcus,4,Order,,,
+Brethren of the Bolt,Scorched Yakob,5,Order,,,
+The Skinnerkin,The Skinnerkin,0,Death,Warband,,
+The Skinnerkin,Gristla Tenderhooke,1,Death,,,
+The Skinnerkin,Young Master Kretch,2,Death,,,
+The Skinnerkin,Flensemaster Pewdrig,3,Death,,,
+The Skinnerkin,Seddrik the Chain,4,Death,,,
