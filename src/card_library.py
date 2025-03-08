@@ -1,5 +1,5 @@
 from fuzzywuzzy import fuzz, process
-from pandas import DataFrame, isna, read_csv
+from pandas import DataFrame, read_csv
 
 
 class Library:
@@ -57,36 +57,15 @@ class Library:
             )
         ]
 
-    def get_whole_warband(
-        self, warband_name: str, grand_alliance: str = None
-    ) -> DataFrame:
+    def get_whole_warband(self, warband_name: str) -> DataFrame:
         if not isinstance(self._warband_memory, DataFrame):
             self.load()
 
         lowercase_warband_name = warband_name.lower()
 
-        if grand_alliance is None:
-            return self._warband_memory[
-                [
-                    lowercase_warband_name in value.lower()
-                    for value in self._warband_memory["Warband"]
-                ]
-            ]
-
-        lowercase_alliance_name = grand_alliance.lower()
-
         return self._warband_memory[
             [
-                (
-                    lowercase_warband_name in row["Warband"].lower()
-                    and isna(row["WarscrollType"])
-                )
-                or (
-                    lowercase_alliance_name in row["Warband"].lower()
-                    and row["WarscrollType"] == "alliance"
-                )
-                for _, row in self._warband_memory[
-                    ["Warband", "WarscrollType"]
-                ].iterrows()
+                lowercase_warband_name in value.lower()
+                for value in self._warband_memory["Warband"]
             ]
         ]
