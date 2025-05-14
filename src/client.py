@@ -82,11 +82,11 @@ class EmbergardClient(Client):
             lowercase_query = query.lower().replace("’", "'")
             warband_matches = self._library.search_warbands(lowercase_query)
             card_matches = self._library.search_cards(lowercase_query)
-            exact_card_matches = card_matches[
-                [lowercase_query == value.lower() for value in card_matches["Name"]]
+            exactish_card_matches = card_matches[
+                [lowercase_query in value.lower() for value in card_matches["Name"]]
             ]
-            exact_warband_matches = warband_matches[
-                [lowercase_query == value.lower() for value in warband_matches["Name"]]
+            exactish_warband_matches = warband_matches[
+                [lowercase_query in value.lower() for value in warband_matches["Name"]]
             ]
             warband_count = len(warband_matches)
             card_count = len(card_matches)
@@ -97,7 +97,7 @@ class EmbergardClient(Client):
                 continue
 
             if (0 == warband_count and 1 == card_count) or (
-                1 == len(exact_card_matches)
+                1 == len(exactish_card_matches)
             ):
                 await message.channel.send(
                     embed=generate_single_embed(
@@ -108,7 +108,7 @@ class EmbergardClient(Client):
                 continue
 
             if (1 == warband_count and 0 == card_count) or (
-                1 == len(exact_warband_matches)
+                1 == len(exactish_warband_matches)
             ):
                 if warband_matches["WarscrollType"].isnull().array[0]:
                     await message.channel.send(

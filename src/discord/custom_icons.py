@@ -4,6 +4,7 @@ from enum import Enum
 class Icons(Enum):
     PLOT_CC0 = "<:ecb_cnt_cata:1304152839395872939>"
     PLOT_EK0 = "<:ecb_edge_knife:1339309868846157856>"
+    PLOT_RS0 = "<:ecb_realmstone_raid:1372269143931228350>"
     PLOY = "<:ecb_ploy_emb:1310516053947715676>"
     UPGRADE = "<:ecb_upg_emb:1310516091742847007>"
     OBJECTIVE = "<:ecb_obj_emb:1310515950621032471>"
