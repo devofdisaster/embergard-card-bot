@@ -140,17 +140,27 @@ def _build_icons(frame: DataFrame) -> str:
 
 
 def _build_objective_icons(frame: DataFrame) -> str:
-    glory = int(frame["Glory/Cost"].array[0])
+    glory_values = str(frame["Glory/Cost"].array[0]).split("|")
+    glories_string = ""
+
+    if glory_values and glory_values[0]:
+        glories_string = " - " + "|".join(
+            Icons.GLORY.value * int(g) for g in glory_values
+        )
+
     add_surge = "Surge" == frame["ObjType"].array[0]
     obj_string = f"{Icons.OBJECTIVE.value}{Icons.SURGE.value if add_surge else ''}"
-    glories_string = (" - " + Icons.GLORY.value * glory) if glory else ""
-    forsaken_string = " - :no_entry:" if frame["Forsaken"].notnull().array[0] else ""
+    restricted_icon = ":lock:" if frame["Restricted"].notnull().array[0] else ""
+    forsaken_icon = ":no_entry:" if frame["Forsaken"].notnull().array[0] else ""
+    restricted_or_forsaken_string = f"{' - ' if restricted_icon or forsaken_icon else ''}{restricted_icon}{forsaken_icon}"
 
-    return obj_string + glories_string + forsaken_string + "\n"
+    return obj_string + glories_string + restricted_or_forsaken_string + "\n"
 
 
 def _build_plot_icons(frame: DataFrame) -> str:
-    forsaken_string = " - :no_entry:" if frame["Forsaken"].notnull().array[0] else ""
+    restricted_icon = ":lock:" if frame["Restricted"].notnull().array[0] else ""
+    forsaken_icon = ":no_entry:" if frame["Forsaken"].notnull().array[0] else ""
+    restricted_or_forsaken_string = f"{' - ' if restricted_icon or forsaken_icon else ''}{restricted_icon}{forsaken_icon}"
     plot_card_id = "PLOT_" + frame["Number"].array[0]
     plot_icon = (
         Icons[plot_card_id].value
@@ -158,21 +168,25 @@ def _build_plot_icons(frame: DataFrame) -> str:
         else ":question:"
     )
 
-    return plot_icon + forsaken_string + "\n"
+    return plot_icon + restricted_or_forsaken_string + "\n"
 
 
 def _build_ploy_icons(frame: DataFrame) -> str:
-    forsaken_string = " - :no_entry:" if frame["Forsaken"].notnull().array[0] else ""
+    restricted_icon = ":lock:" if frame["Restricted"].notnull().array[0] else ""
+    forsaken_icon = ":no_entry:" if frame["Forsaken"].notnull().array[0] else ""
+    restricted_or_forsaken_string = f"{' - ' if restricted_icon or forsaken_icon else ''}{restricted_icon}{forsaken_icon}"
 
-    return Icons.PLOY.value + forsaken_string + "\n"
+    return Icons.PLOY.value + restricted_or_forsaken_string + "\n"
 
 
 def _build_upgrade_icons(frame: DataFrame) -> str:
     glory = int(frame["Glory/Cost"].array[0])
     glories_string = (" - " + Icons.GLORY.value * glory) if glory else ""
-    forsaken_string = " - :no_entry:" if frame["Forsaken"].notnull().array[0] else ""
+    restricted_icon = ":lock:" if frame["Restricted"].notnull().array[0] else ""
+    forsaken_icon = ":no_entry:" if frame["Forsaken"].notnull().array[0] else ""
+    restricted_or_forsaken_string = f"{' - ' if restricted_icon or forsaken_icon else ''}{restricted_icon}{forsaken_icon}"
 
-    return Icons.UPGRADE.value + glories_string + forsaken_string + "\n"
+    return Icons.UPGRADE.value + glories_string + restricted_or_forsaken_string + "\n"
 
 
 def _replace_description_icons(frame: DataFrame) -> str:
