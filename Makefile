@@ -30,9 +30,10 @@ clean:
 
 help:
 	@echo "Usage:"
-	@echo "  make install   - Set up the virtual environment and install dependencies"
-	@echo "  make run       - Start the Card Bot in the foreground"
-	@echo "  make test      - Run tests"
-	@echo "  make lint      - Lint the code"
-	@echo "  make clean     - Clean up generated files"
-	@echo "  make help      - Show this help message"
+	@echo "  make install       - Set up the virtual environment and install dependencies"
+	@echo "  make run           - Start the Card Bot in the foreground"
+	@echo "  make test          - Run tests with pytest"
+	@echo "  make test-coverage - Run tests with coverage reporting"
+	@echo "  make lint          - Lint the code"
+	@echo "  make clean         - Clean up generated files"
+	@echo "  make help          - Show this help message"
