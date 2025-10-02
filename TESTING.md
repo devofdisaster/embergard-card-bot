@@ -1,18 +1,5 @@
 # Testing Framework Setup for Embergard Card Bot
 
-## Issue Resolution Summary
-
-The original issue was a mismatch between pytest configuration and test implementation:
-
-### Problems Identified:
-1. **Framework Confusion**: pyproject.toml configured for pytest, but tests written in unittest
-2. **Missing pytest Import**: conftest.py tried to use `@pytest.fixture` without importing pytest
-3. **Fixture vs Utility Functions**: conftest.py provided utility functions instead of pytest fixtures
-4. **Import Conflicts**: Duplicate and unused imports causing linting errors
-
-### Solution Implemented:
-Converted the entire test suite to use **pytest** with proper fixtures:
-
 ## File Structure
 
 ```
