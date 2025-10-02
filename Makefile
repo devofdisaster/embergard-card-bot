@@ -16,7 +16,8 @@ install: $(VENV_DIR)
 	$(PIP) install -r requirements.txt
 
 test: $(VENV_DIR)
-	$(PYTHON) -m unittest discover -s tests
+	$(PIP) install -r requirements-test.txt
+	$(PYTHON) -m pytest
 
 lint: $(VENV_DIR)
 	$(PIP) install ruff

@@ -74,7 +74,7 @@ def sample_warbands_data() -> pd.DataFrame:
                 "alliance",
                 "alliance",
                 "alliance",
-                "generic",
+                None,
                 None,
                 None,
             ],

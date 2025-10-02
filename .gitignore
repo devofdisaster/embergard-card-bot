@@ -13,4 +13,10 @@ __pycache__/
 # Logging
 logs
 
+# Coverage reports
+.coverage
+.coverage.*
+coverage.xml
+htmlcov/
+
 .DS_Store
