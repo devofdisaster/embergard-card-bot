@@ -6,6 +6,7 @@ class Icons(Enum):
     PLOT_EK0 = "<:ecb_edge_knife:1339309868846157856>"
     PLOT_RS0 = "<:ecb_realmstone_raid:1372269143931228350>"
     PLOT_RG0 = "<:ecb_raging_slayers:1396133721777770546>"
+    PLOT_DY0 = "<:ecb_deadly_synergy:1423945943786717315>"
     PLOY = "<:ecb_ploy_emb:1310516053947715676>"
     UPGRADE = "<:ecb_upg_emb:1310516091742847007>"
     OBJECTIVE = "<:ecb_obj_emb:1310515950621032471>"
