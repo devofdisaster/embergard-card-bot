@@ -182,11 +182,20 @@ def _build_ploy_icons(frame: DataFrame) -> str:
 def _build_upgrade_icons(frame: DataFrame) -> str:
     glory = int(frame["Glory/Cost"].array[0])
     glories_string = (" - " + Icons.GLORY.value * glory) if glory else ""
+    restrictions_icon = (
+        "- :crown:" if "Leader" == frame["Restrictions"].array[0] else ""
+    )
     restricted_icon = ":lock:" if frame["Restricted"].notnull().array[0] else ""
     forsaken_icon = ":no_entry:" if frame["Forsaken"].notnull().array[0] else ""
     restricted_or_forsaken_string = f"{' - ' if restricted_icon or forsaken_icon else ''}{restricted_icon}{forsaken_icon}"
 
-    return Icons.UPGRADE.value + glories_string + restricted_or_forsaken_string + "\n"
+    return (
+        Icons.UPGRADE.value
+        + glories_string
+        + restrictions_icon
+        + restricted_or_forsaken_string
+        + "\n"
+    )
 
 
 def _replace_description_icons(frame: DataFrame) -> str:
