@@ -170,9 +170,9 @@ class EmbergardClient(Client):
             "**Card and Warband Search:**\n"
             "- Use **((search_term))** to search for cards or warbands, for example `((ghartok))`\n"
             "- Use multiple search terms in one message: `((ghartok)) ((fortitude)) ((pandaemonium)) ((alliance death))`\n\n"
-            "**Rules Quertions Email Templating:**\n"
+            "**Rules Questions Email Templating:**\n"
             "- Use **[[Subject]]** followed by message content to generate an email link:\n"
-            "```\n[[Spitewood Q: New Tokens]]\nAre Aqua Ghyranis Feature Tokens, feature tokens?\nDo they count for the Countdown to Cataclysm tracker? Can Ghartok be driven back from one?```\n\n"
+            "```\n[[Spitewood Q: New Tokens]]\nAre Aqua Ghyranis Feature Tokens, feature tokens?\nDo they count for the Countdown to Cataclysm tracker?\nCan Ghartok be driven back from one?```\n\n"
             "**Other:**\n"
             "- Use **((help))** to get this exceedingly helpful message"
         )
