@@ -245,3 +245,32 @@ def _build_footer(frame: DataFrame) -> str:
         footer += f"\nSet: {set_name}, Deck: {deck_name}"
 
     return footer
+
+
+def generate_email_embed(subject: str, body: str, mailto_link: str) -> Embed:
+    embed = Embed(
+        title="Email your question to the WHU Design Team",
+        description="Click the link below to send your email. It will contain the following:",
+        color=0x3498DB,  # Blue color
+    )
+
+    embed.add_field(name="Subject", value=f"```{subject}```", inline=False)
+
+    # Add body field (truncate if too long for Discord embed limits)
+    body_display = body
+
+    if len(body) > 900:
+        body_display = body[:897] + "..."
+
+    embed.add_field(name="Message", value=f"```{body_display}```", inline=False)
+
+    # Add the clickable mailto link
+    embed.add_field(
+        name="",
+        value=f":e_mail: [Send email]({mailto_link})",
+        inline=False,
+    )
+
+    embed.set_footer(text="This will open your default email application")
+
+    return embed
