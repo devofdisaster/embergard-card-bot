@@ -14,8 +14,8 @@ class TestEmailMessageFactory:
 
         embed = generate_email_embed(subject, body, mailto_link)
 
-        assert embed.title == "📧 Email to Warhammer Underworlds Team"
-        assert "whunderworlds@gwplc.com" in embed.description
+        assert embed.title == "Email your question to the WHU Design Team"
+        assert "Click the link below to send your email" in embed.description
         assert embed.color.value == 0x3498DB
 
         # Check fields
@@ -24,7 +24,8 @@ class TestEmailMessageFactory:
         assert subject in embed.fields[0].value
         assert embed.fields[1].name == "Message"
         assert body in embed.fields[1].value
-        assert embed.fields[2].name == "📎 Send Email"
+        assert embed.fields[2].name == ""
+        assert "Send email" in embed.fields[2].value
         assert mailto_link in embed.fields[2].value
 
         assert embed.footer.text == "This will open your default email application"

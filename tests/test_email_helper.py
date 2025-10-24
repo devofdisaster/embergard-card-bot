@@ -1,8 +1,12 @@
-from discord.email_helper import EmailParser
+from src.discord.email_helper import (
+    RECIPIENT_EMAIL,
+    generate_mailto_link,
+    parse_email_request,
+)
 
 
-class TestEmailParser:
-    """Test cases for the EmailParser class."""
+class TestEmailHelper:
+    """Test cases for email helper functions."""
 
     def test_parse_valid_email_request(self):
         """Test parsing a valid email request."""
@@ -14,7 +18,7 @@ Steps to reproduce:
 1. Search for specific card
 2. Notice the missing thumbnail"""
 
-        result = EmailParser.parse_email_request(message)
+        result = parse_email_request(message)
         assert result is not None
         subject, body = result
         assert subject == "Bug Report: Card Display Issue"
@@ -26,7 +30,7 @@ Steps to reproduce:
         message = """[[  Suggestion: New Feature  ]]
 This is my suggestion for a new feature."""
 
-        result = EmailParser.parse_email_request(message)
+        result = parse_email_request(message)
         assert result is not None
         subject, body = result
         assert subject == "Suggestion: New Feature"
@@ -39,7 +43,7 @@ Line 1 of content
 Line 2 of content
 Line 3 of content"""
 
-        result = EmailParser.parse_email_request(message)
+        result = parse_email_request(message)
         assert result is not None
         subject, body = result
         assert subject == "Feature Request"
@@ -50,28 +54,28 @@ Line 3 of content"""
         message = """[[]]
 This has no subject."""
 
-        result = EmailParser.parse_email_request(message)
+        result = parse_email_request(message)
         assert result is None
 
     def test_parse_invalid_email_request_no_body(self):
         """Test parsing invalid email request with no body."""
         message = """[[Subject Only]]"""
 
-        result = EmailParser.parse_email_request(message)
+        result = parse_email_request(message)
         assert result is None
 
     def test_parse_no_email_pattern(self):
         """Test parsing message without email pattern."""
         message = """This is just a regular message without email format."""
 
-        result = EmailParser.parse_email_request(message)
+        result = parse_email_request(message)
         assert result is None
 
     def test_parse_card_search_pattern(self):
         """Test that card search patterns are not parsed as email."""
         message = """((ghartok))"""
 
-        result = EmailParser.parse_email_request(message)
+        result = parse_email_request(message)
         assert result is None
 
     def test_generate_mailto_link_basic(self):
@@ -79,7 +83,7 @@ This has no subject."""
         subject = "Test Subject"
         body = "Test body content"
 
-        result = EmailParser.generate_mailto_link(subject, body)
+        result = generate_mailto_link(subject, body)
         expected = "mailto:whunderworlds@gwplc.com?subject=Test%20Subject&body=Test%20body%20content"
         assert result == expected
 
@@ -88,7 +92,7 @@ This has no subject."""
         subject = "Bug: Card & Deck Issues"
         body = "This is a test with special chars: @#$%^&*()"
 
-        result = EmailParser.generate_mailto_link(subject, body)
+        result = generate_mailto_link(subject, body)
         assert "whunderworlds@gwplc.com" in result
         assert "subject=Bug%3A%20Card%20%26%20Deck%20Issues" in result
         assert "%40%23%24%25%5E%26%2A%28%29" in result  # URL encoded special chars
@@ -98,7 +102,7 @@ This has no subject."""
         subject = "Multi-line Report"
         body = "Line 1\nLine 2\nLine 3"
 
-        result = EmailParser.generate_mailto_link(subject, body)
+        result = generate_mailto_link(subject, body)
         assert "whunderworlds@gwplc.com" in result
         assert "Line%201%0ALine%202%0ALine%203" in result  # URL encoded newlines
 
@@ -107,8 +111,10 @@ This has no subject."""
         message = """[[Test Subject]]
 Test body content"""
 
-        result = EmailParser.process_email_request(message)
-        assert result is not None
+        parsed = parse_email_request(message)
+        assert parsed is not None
+        subject, body = parsed
+        result = generate_mailto_link(subject, body)
         assert "mailto:whunderworlds@gwplc.com" in result
         assert "subject=Test%20Subject" in result
         assert "body=Test%20body%20content" in result
@@ -117,9 +123,9 @@ Test body content"""
         """Test complete email request processing with invalid input."""
         message = """This is not an email request"""
 
-        result = EmailParser.process_email_request(message)
+        result = parse_email_request(message)
         assert result is None
 
     def test_recipient_email_constant(self):
         """Test that the recipient email is correct."""
-        assert EmailParser.RECIPIENT_EMAIL == "whunderworlds@gwplc.com"
+        assert RECIPIENT_EMAIL == "whunderworlds@gwplc.com"
