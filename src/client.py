@@ -5,8 +5,10 @@ import re
 
 from discord import Client, Intents, Message
 from src.card_library import Library
+from src.discord.email_helper import generate_mailto_link, parse_email_request
 from src.discord.message_factory import (
     generate_alliance_warband_embeds,
+    generate_email_embed,
     generate_fighter_embeds,
     generate_multi_embed,
     generate_single_embed,
@@ -54,6 +56,19 @@ class EmbergardClient(Client):
 
     async def on_message(self, message: Message) -> None:
         if message.author == self.user:
+            return
+
+        email_content_parsed = parse_email_request(message.content)
+
+        if email_content_parsed is not None:
+            subject, body = email_content_parsed
+
+            embed = generate_email_embed(
+                subject, body, generate_mailto_link(subject, body)
+            )
+
+            await message.channel.send(embed=embed)
+
             return
 
         matches = re.findall(r"\(\(\s?(.*?)\s?\)\)", message.content)
@@ -152,8 +167,13 @@ class EmbergardClient(Client):
 
     async def send_help_message(self, message: Message) -> None:
         help_text = (
+            "**Card and Warband Search:**\n"
             "- Use **((search_term))** to search for cards or warbands, for example `((ghartok))`\n"
             "- Use multiple search terms in one message: `((ghartok)) ((fortitude)) ((pandaemonium)) ((alliance death))`\n\n"
+            "**Questions Email Feature:**\n"
+            "- Use **[[Subject]]** followed by message content to generate an email link:\n"
+            "```\n[[Bug Report: Card Display Issue]]\nI found a problem with the card display...\nSteps to reproduce:\n1. Search for specific card\n2. Notice the issue```\n\n"
+            "**Other:**\n"
             "- Use **((help))** to get this exceedingly helpful message"
         )
         await message.channel.send(help_text)
