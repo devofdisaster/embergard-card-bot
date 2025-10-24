@@ -11,6 +11,7 @@ icon_map = {
     ":dfBlock:": Icons.DEF_SHIELD.value,
     ":dfDodge:": Icons.DEF_DODGE.value,
     ":dfSup:": Icons.DEF_FLANKED.value,
+    ":dfSup1:": Icons.DEF_FLANKED.value,
     ":dfSup2:": Icons.DEF_SURROUNDED.value,
     ":MagFocus:": Icons.SPL_FOCUS.value,
     ":MagChannel:": Icons.SPL_CHANNEL.value,
